@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
   <!-- Call loadQuiz() on page load; quizData is already loaded via quizData.js -->
-  <body onload="loadQuiz()">
+<body>
   <header>
     <h1>Practice Exam</h1>
     <nav>
@@ -39,8 +39,9 @@
     </div>
   </div>
   <!-- Load the quiz data before the main script -->
- <script src="quizData.js"></script>
+<script src="quizData.js"></script>
 <script src="script.js"></script>
-<script src="quizOverride.js"></script>
+<script src="quizOverride.js?v=8"></script>
+<script>window.addEventListener("load", function () { if (typeof loadQuiz === "function") { loadQuiz(); } });</script>
 </body>
 </html>
