@@ -304,3 +304,15 @@ input[type="checkbox"] {
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.12);
 }
+.quiz-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.btn-primary:disabled,
+.btn-secondary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
