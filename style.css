@@ -1,22 +1,15 @@
-.progress-wrap {
-  margin-top: 12px;
-}
-
-.progress-label {
-  font-weight: 600;
-  color: var(--muted);
-  margin-bottom: 6px;
-}
-
+/* ===== DASHBOARD PROGRESS BAR (index.html cards) ===== */
 .progress-bar {
   width: 100%;
   height: 10px;
   background: rgba(15, 23, 42, 0.10);
   border-radius: 999px;
   overflow: hidden;
+  margin: 10px 0 6px;
 }
 
-.progress-fill {
+.progress-bar span {
+  display: block;
   height: 100%;
   width: 0%;
   background: var(--primary);
@@ -24,6 +17,11 @@
   transition: width 0.2s ease;
 }
 
+.percentage {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 /* =========================================================
    SQE APP – FLK1 / FLK2 SHARED VISUAL THEME
    ========================================================= */
