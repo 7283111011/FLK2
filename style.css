@@ -156,11 +156,6 @@ input[type="checkbox"] {
   margin-bottom: 1rem;
 }
 
-.quiz-option {
-  display: block;
-  margin: 0.6rem 0;
-}
-
 /* ===== QUIZ NAV ===== */
 
 .quiz-navigation {
@@ -315,4 +310,9 @@ input[type="checkbox"] {
 .btn-secondary:disabled {
   opacity: 0.55;
   cursor: not-allowed;
+}
+/* Secondary buttons should not turn purple on hover */
+.btn-secondary:hover {
+  background: #d1d5db;
+  transform: translateY(-1px);
 }
