@@ -1,23 +1,11 @@
 /* quizOverride.js
    Two-button flow:
-   - Choose an option -> enables Select
-   - Click Select -> shows feedback and enables Next
-   - Click Next -> moves to the next question
+   - Choose an option -> Select enabled
+   - Click Select -> feedback shown and Next enabled
+   - Click Next -> move forward
 */
 
 (function () {
-  console.log("quizOverride.js loaded");
-  if (!window.quizData || !Array.isArray(window.quizData)) return;
-
-  let currentIndex = 0;
-  let startedAtMs = null;
-  let timerHandle = null;
-
-  const selectedByIndex = {};
-  const answeredByIndex = {};
-  const correctByIndex = {};
-  const flaggedByIndex = {};
-
   function $(id) {
     return document.getElementById(id);
   }
@@ -26,243 +14,245 @@
     const totalSec = Math.max(0, Math.floor(ms / 1000));
     const m = String(Math.floor(totalSec / 60)).padStart(2, "0");
     const s = String(totalSec % 60).padStart(2, "0");
-    return `${m}:${s}`;
+    return m + ":" + s;
   }
 
-  function updateTimer() {
-    if (startedAtMs === null) return;
-    const el = $("quiz-timer");
-    if (!el) return;
-    el.textContent = formatElapsed(Date.now() - startedAtMs);
-  }
+  window.initPracticeQuiz = function (questions) {
+    const navEl = $("quiz-navigation");
+    const qEl = $("quiz-question");
+    const optionsEl = $("quiz-options");
+    const feedbackEl = $("quiz-score");
+    const statsEl = $("quiz-stats");
+    const timerEl = $("quiz-timer");
 
-  function startTimerOnce() {
-    if (timerHandle) return;
-    startedAtMs = Date.now();
-    updateTimer();
-    timerHandle = window.setInterval(updateTimer, 500);
-  }
-
-  function stopTimer() {
-    if (timerHandle) {
-      window.clearInterval(timerHandle);
-      timerHandle = null;
-    }
-  }
-
-  function getAnsweredCount() {
-    return Object.keys(answeredByIndex).length;
-  }
-
-  function getCorrectCount() {
-    return Object.values(correctByIndex).filter(Boolean).length;
-  }
-
-  function renderStats() {
-    const el = $("quiz-stats");
-    if (!el) return;
-
-    const answered = getAnsweredCount();
-    const correct = getCorrectCount();
-    const pct = answered === 0 ? 0 : Math.round((correct / answered) * 100);
-
-    el.textContent = `Score: ${pct}%`;
-  }
-
-  function renderNavigation() {
-    const nav = $("quiz-navigation");
-    if (!nav) return;
-
-    nav.innerHTML = "";
-
-    window.quizData.forEach((q, idx) => {
-      const btn = document.createElement("button");
-      btn.className = "nav-question";
-      btn.type = "button";
-      btn.textContent = String(q.number ?? (idx + 1));
-
-      if (idx === currentIndex) btn.classList.add("nav-current");
-      if (flaggedByIndex[idx]) btn.classList.add("nav-flagged");
-      if (answeredByIndex[idx]) btn.classList.add(correctByIndex[idx] ? "nav-correct" : "nav-incorrect");
-
-      btn.addEventListener("click", () => {
-        currentIndex = idx;
-        renderQuestion();
-      });
-
-      nav.appendChild(btn);
-    });
-  }
-
-  function setButtonStates() {
+    const flagBtn = $("flag-btn");
     const selectBtn = $("select-btn");
     const nextBtn = $("next-btn");
+    const restartBtn = $("restart-btn");
 
-    const alreadyAnswered = !!answeredByIndex[currentIndex];
-    const hasSelection = !!selectedByIndex[currentIndex];
-
-    // Select enabled only when there is a choice and question not yet answered
-    if (selectBtn) selectBtn.disabled = alreadyAnswered || !hasSelection;
-
-    // Next enabled only after Select has been used (question answered)
-    if (nextBtn) {
-      nextBtn.disabled = !alreadyAnswered;
-      nextBtn.textContent = (currentIndex < window.quizData.length - 1) ? "Next" : "Finish";
+    if (!navEl || !qEl || !optionsEl || !feedbackEl || !statsEl || !timerEl || !flagBtn || !selectBtn || !nextBtn || !restartBtn) {
+      console.error("Quiz UI elements missing from quiz.html");
+      return;
     }
-  }
 
-  function lockOptions() {
-    const inputs = document.querySelectorAll('input[name="quiz-answer"]');
-    inputs.forEach((i) => (i.disabled = true));
-  }
+    let currentIndex = 0;
+    let timerHandle = null;
+    let startedAtMs = null;
 
-  function renderQuestion() {
-    startTimerOnce();
+    const selectedByIndex = {};
+    const answeredByIndex = {};
+    const correctByIndex = {};
+    const flaggedByIndex = {};
 
-    const q = window.quizData[currentIndex];
+    function startTimerOnce() {
+      if (timerHandle) return;
+      startedAtMs = Date.now();
+      timerEl.textContent = "00:00";
+      timerHandle = window.setInterval(function () {
+        timerEl.textContent = formatElapsed(Date.now() - startedAtMs);
+      }, 500);
+    }
 
-    const qEl = $("quiz-question");
-    const oEl = $("quiz-options");
-    const feedbackEl = $("quiz-score");
-    const flagBtn = $("flag-btn");
+    function stopTimer() {
+      if (timerHandle) {
+        window.clearInterval(timerHandle);
+        timerHandle = null;
+      }
+    }
 
-    if (qEl) qEl.textContent = `${q.number}. ${q.question}`;
-    if (oEl) oEl.innerHTML = "";
+    function answeredCount() {
+      return Object.keys(answeredByIndex).length;
+    }
 
-    // Clear feedback only when rendering a question fresh
-    if (feedbackEl) feedbackEl.textContent = "";
+    function correctCount() {
+      return Object.values(correctByIndex).filter(Boolean).length;
+    }
 
-    if (flagBtn) flagBtn.textContent = flaggedByIndex[currentIndex] ? "Unflag" : "Flag for Review";
+    function renderScore() {
+      const a = answeredCount();
+      const c = correctCount();
+      const pct = a === 0 ? 0 : Math.round((c / a) * 100);
+      statsEl.textContent = "Score: " + pct + "%";
+    }
 
-    const alreadyAnswered = !!answeredByIndex[currentIndex];
-    const previouslySelected = selectedByIndex[currentIndex] || null;
+    function setButtonStates() {
+      const alreadyAnswered = !!answeredByIndex[currentIndex];
+      const hasSelection = !!selectedByIndex[currentIndex];
 
-    Object.entries(q.options || {}).forEach(([letter, text]) => {
-      const id = `q_${currentIndex}_${letter}`;
+      // Select enabled only if selection exists and not answered
+      selectBtn.disabled = alreadyAnswered || !hasSelection;
 
-      const label = document.createElement("label");
-      label.className = "quiz-option";
-      label.setAttribute("for", id);
+      // Next enabled only after answered
+      nextBtn.disabled = !alreadyAnswered;
+      nextBtn.textContent = (currentIndex < questions.length - 1) ? "Next" : "Finish";
 
-      const input = document.createElement("input");
-      input.type = "radio";
-      input.name = "quiz-answer";
-      input.id = id;
-      input.value = letter;
-      input.checked = previouslySelected === letter;
-      input.disabled = alreadyAnswered;
+      flagBtn.textContent = flaggedByIndex[currentIndex] ? "Unflag" : "Flag for Review";
+    }
 
-      const span = document.createElement("span");
-      span.textContent = `${letter}. ${text}`;
+    function lockOptions() {
+      const inputs = optionsEl.querySelectorAll('input[name="quiz-answer"]');
+      inputs.forEach(function (i) { i.disabled = true; });
+    }
 
-      input.addEventListener("change", () => {
-        if (answeredByIndex[currentIndex]) return;
-        selectedByIndex[currentIndex] = letter;
-        setButtonStates(); // this enables Select
+    function renderNavigation() {
+      navEl.innerHTML = "";
+
+      questions.forEach(function (q, idx) {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "nav-question";
+        b.textContent = String(q.number != null ? q.number : (idx + 1));
+
+        if (idx === currentIndex) b.classList.add("nav-current");
+        if (flaggedByIndex[idx]) b.classList.add("nav-flagged");
+        if (answeredByIndex[idx]) b.classList.add(correctByIndex[idx] ? "nav-correct" : "nav-incorrect");
+
+        b.addEventListener("click", function () {
+          currentIndex = idx;
+          renderQuestion();
+        });
+
+        navEl.appendChild(b);
+      });
+    }
+
+    function renderQuestion() {
+      startTimerOnce();
+
+      const q = questions[currentIndex];
+      qEl.textContent = String(q.number != null ? q.number : (currentIndex + 1)) + ". " + q.question;
+
+      // Clear options
+      optionsEl.innerHTML = "";
+
+      // Clear feedback when loading the question screen
+      feedbackEl.textContent = "";
+
+      const alreadyAnswered = !!answeredByIndex[currentIndex];
+      const previouslySelected = selectedByIndex[currentIndex] || null;
+
+      Object.entries(q.options || {}).forEach(function (entry) {
+        const letter = entry[0];
+        const text = entry[1];
+
+        const id = "q_" + currentIndex + "_" + letter;
+
+        const label = document.createElement("label");
+        label.className = "quiz-option";
+        label.setAttribute("for", id);
+
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = "quiz-answer";
+        input.id = id;
+        input.value = letter;
+        input.checked = (previouslySelected === letter);
+        input.disabled = alreadyAnswered;
+
+        input.addEventListener("change", function () {
+          if (answeredByIndex[currentIndex]) return;
+          selectedByIndex[currentIndex] = letter;
+          setButtonStates();
+        });
+
+        const span = document.createElement("span");
+        span.textContent = letter + ". " + text;
+
+        label.appendChild(input);
+        label.appendChild(span);
+        optionsEl.appendChild(label);
       });
 
-      label.appendChild(input);
-      label.appendChild(span);
-      if (oEl) oEl.appendChild(label);
-    });
+      // If already answered, show feedback immediately
+      if (alreadyAnswered) {
+        lockOptions();
+        const isCorrect = !!correctByIndex[currentIndex];
+        const explanation = q.explanation ? " " + q.explanation : "";
+        feedbackEl.textContent = isCorrect
+          ? ("Correct." + explanation)
+          : ("Incorrect. Correct answer: " + q.answer + "." + explanation);
+      }
 
-    // If already answered (user navigated back), show feedback and lock options
-    if (alreadyAnswered && feedbackEl) {
-      lockOptions();
-      const isCorrect = !!correctByIndex[currentIndex];
-      const explanation = q.explanation ? ` ${q.explanation}` : "";
-      feedbackEl.textContent = isCorrect
-        ? `Correct.${explanation}`
-        : `Incorrect. Correct answer: ${q.answer}.${explanation}`;
+      renderScore();
+      renderNavigation();
+      setButtonStates();
     }
 
-    renderStats();
-    renderNavigation();
-    setButtonStates();
-  }
+    function selectAnswer() {
+      const q = questions[currentIndex];
+      const selected = selectedByIndex[currentIndex];
 
-  // This is what your Select button calls in quiz.html
-  window.selectAnswer = function () {
-    const q = window.quizData[currentIndex];
-    const feedbackEl = $("quiz-score");
+      if (answeredByIndex[currentIndex]) return;
 
-    if (answeredByIndex[currentIndex]) return;
+      if (!selected) {
+        feedbackEl.textContent = "Please select an answer.";
+        return;
+      }
 
-    const selected = selectedByIndex[currentIndex];
-    if (!selected) {
-      if (feedbackEl) feedbackEl.textContent = "Please select an answer.";
-      return;
-    }
+      answeredByIndex[currentIndex] = true;
+      correctByIndex[currentIndex] = (selected === q.answer);
 
-    answeredByIndex[currentIndex] = true;
-    correctByIndex[currentIndex] = (selected === q.answer);
-
-    const explanation = q.explanation ? ` ${q.explanation}` : "";
-    if (feedbackEl) {
+      const explanation = q.explanation ? " " + q.explanation : "";
       feedbackEl.textContent = correctByIndex[currentIndex]
-        ? `Correct.${explanation}`
-        : `Incorrect. Correct answer: ${q.answer}.${explanation}`;
+        ? ("Correct." + explanation)
+        : ("Incorrect. Correct answer: " + q.answer + "." + explanation);
+
+      lockOptions();
+      renderScore();
+      renderNavigation();
+      setButtonStates();
     }
 
-    lockOptions();
-    renderStats();
-    renderNavigation();
-    setButtonStates(); // this enables Next
-  };
+    function nextQuestion() {
+      if (!answeredByIndex[currentIndex]) {
+        feedbackEl.textContent = "Please click Select before moving to the next question.";
+        return;
+      }
 
-  // Next only advances, it does not mark answers
-  window.nextQuestion = function () {
-    const feedbackEl = $("quiz-score");
-    const nextBtn = $("next-btn");
+      if (currentIndex < questions.length - 1) {
+        currentIndex += 1;
+        renderQuestion();
+        return;
+      }
 
-    if (!answeredByIndex[currentIndex]) {
-      if (feedbackEl) feedbackEl.textContent = "Please click Select before moving to the next question.";
-      return;
-    }
-
-    if (currentIndex < window.quizData.length - 1) {
-      currentIndex += 1;
-      renderQuestion();
-      return;
-    }
-
-    // Finish
-    stopTimer();
-    const correct = getCorrectCount();
-    const total = window.quizData.length;
-    const pct = total === 0 ? 0 : Math.round((correct / total) * 100);
-
-    if (feedbackEl) feedbackEl.textContent = `Finished. Score: ${pct}% (${correct}/${total}).`;
-    if (nextBtn) {
+      // Finish
+      stopTimer();
+      const c = correctCount();
+      const t = questions.length;
+      const pct = t === 0 ? 0 : Math.round((c / t) * 100);
+      feedbackEl.textContent = "Finished. Score: " + pct + "% (" + c + "/" + t + ").";
       nextBtn.disabled = true;
-      nextBtn.textContent = "Finished";
+      selectBtn.disabled = true;
     }
-  };
 
-  window.flagQuestion = function () {
-    flaggedByIndex[currentIndex] = !flaggedByIndex[currentIndex];
-    renderNavigation();
+    function toggleFlag() {
+      flaggedByIndex[currentIndex] = !flaggedByIndex[currentIndex];
+      renderNavigation();
+      setButtonStates();
+    }
 
-    const flagBtn = $("flag-btn");
-    if (flagBtn) flagBtn.textContent = flaggedByIndex[currentIndex] ? "Unflag" : "Flag for Review";
-  };
+    function restart() {
+      currentIndex = 0;
 
-  window.restartQuiz = function () {
-    currentIndex = 0;
-    Object.keys(selectedByIndex).forEach((k) => delete selectedByIndex[k]);
-    Object.keys(answeredByIndex).forEach((k) => delete answeredByIndex[k]);
-    Object.keys(correctByIndex).forEach((k) => delete correctByIndex[k]);
-    Object.keys(flaggedByIndex).forEach((k) => delete flaggedByIndex[k]);
+      Object.keys(selectedByIndex).forEach(function (k) { delete selectedByIndex[k]; });
+      Object.keys(answeredByIndex).forEach(function (k) { delete answeredByIndex[k]; });
+      Object.keys(correctByIndex).forEach(function (k) { delete correctByIndex[k]; });
+      Object.keys(flaggedByIndex).forEach(function (k) { delete flaggedByIndex[k]; });
 
-    stopTimer();
-    startedAtMs = null;
+      stopTimer();
+      startedAtMs = null;
+      timerEl.textContent = "00:00";
 
-    renderStats();
-    renderQuestion();
-  };
+      renderQuestion();
+    }
 
-  window.loadQuiz = function () {
-    renderStats();
+    // Wire buttons
+    selectBtn.addEventListener("click", selectAnswer);
+    nextBtn.addEventListener("click", nextQuestion);
+    flagBtn.addEventListener("click", toggleFlag);
+    restartBtn.addEventListener("click", restart);
+
+    // Start
     renderQuestion();
   };
 })();
