@@ -1,4 +1,5 @@
-/* ===== DASHBOARD PROGRESS BAR (index.html cards) ===== */
+/* ===== DASHBOARD PROGRESS (index.html) ===== */
+
 .progress-bar {
   width: 100%;
   height: 10px;
@@ -22,6 +23,7 @@
   color: var(--muted);
   font-size: 0.9rem;
 }
+
 /* =========================================================
    SQE APP – FLK1 / FLK2 SHARED VISUAL THEME
    ========================================================= */
