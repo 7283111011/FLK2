@@ -25,12 +25,17 @@
     <div class="quiz-container">
       <div id="quiz-question" class="quiz-question"></div>
       <div id="quiz-options" class="quiz-options"></div>
-      <div class="quiz-actions">
-        <button class="btn-primary" onclick="nextQuestion()">Next</button>
-        <button class="btn-secondary" id="flag-btn" onclick="flagQuestion()">Flag for Review</button>
-        <button class="btn-secondary" onclick="restartQuiz()">Restart</button>
-        <button class="btn-secondary" onclick="openCalculator()">Calculator</button>
-      </div>
+<div class="quiz-actions">
+  <button id="flag-btn" class="btn-secondary" onclick="flagQuestion()">Flag for Review</button>
+
+  <!-- NEW: Select / Check button -->
+  <button id="select-btn" class="btn-primary" onclick="selectAnswer()" disabled>Select</button>
+
+  <!-- Next is now separate -->
+  <button id="next-btn" class="btn-primary" onclick="nextQuestion()" disabled>Next</button>
+
+  <button class="btn-secondary" onclick="restartQuiz()">Restart</button>
+</div>
       <div id="quiz-score" class="quiz-score"></div>
     </div>
   </div>
