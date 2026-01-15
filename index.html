@@ -45,11 +45,12 @@
       </div>
       <div class="card" data-page="trusts" data-total="10">
         <h2>Trusts Law</h2>
-        <div class="progress-wrap">
-  <div class="progress-label" id="trustsProgressLabel">Progress: 0%</div>
-  <div class="progress-bar">
-    <div class="progress-fill" id="trustsProgressFill" style="width: 0%;"></div>
-  </div>
+<div class="card" data-page="trusts" data-total="10">
+  <h2>Trusts Law</h2>
+  <div class="progress-bar"><span></span></div>
+  <div class="percentage">0% complete</div>
+  <p><a href="topics/trusts.html">Study</a></p>
+</div>
 </div>
         <div class="progress-bar"><span></span></div>
         <div class="percentage">0% complete</div>
@@ -70,36 +71,5 @@
     </div>
   </div>
   <script src="script.js"></script>
-  <script>
-  function readProgress(key) {
-    try {
-      const raw = localStorage.getItem(key);
-      if (!raw) return { total: 0, completed: 0 };
-      const obj = JSON.parse(raw);
-      const total = Number(obj.total || 0);
-      const completed = Number(obj.completed || 0);
-      return { total, completed };
-    } catch (e) {
-      return { total: 0, completed: 0 };
-    }
-  }
-
-  function renderProgress(key, fillId, labelId) {
-    const p = readProgress(key);
-    const pct = p.total > 0 ? Math.round((p.completed / p.total) * 100) : 0;
-
-    const fill = document.getElementById(fillId);
-    const label = document.getElementById(labelId);
-
-    if (fill) fill.style.width = pct + "%";
-    if (label) label.textContent = "Progress: " + pct + "%";
-  }
-
-  window.addEventListener("load", function () {
-    renderProgress("progress_trusts", "trustsProgressFill", "trustsProgressLabel");
-    // Add additional sections here:
-    // renderProgress("progress_land", "landProgressFill", "landProgressLabel");
-  });
-</script>
-</body>
+ </body>
 </html>
