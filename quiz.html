@@ -16,10 +16,10 @@
     </nav>
   </header>
   <div class="container">
-    <!-- Timer display -->
-    <div id="quiz-timer" class="quiz-timer"></div>
-    <!-- Live score display -->
-    <div id="quiz-stats" class="quiz-stats"></div>
+    <div class="quiz-topbar">
+  <div id="quiz-stats" class="quiz-stats"></div>
+  <div id="quiz-timer" class="quiz-timer"></div>
+</div>
     <!-- Navigation panel -->
     <div id="quiz-navigation" class="quiz-navigation"></div>
     <div class="quiz-container">
@@ -35,7 +35,9 @@
     </div>
   </div>
   <!-- Load the quiz data before the main script -->
-  <script src="quizData.js"></script>
-  <script src="script.js"></script>
+ <script src="quizData.js"></script>
+<script src="script.js"></script>
+<script src="quizOverride.js">
+</script>
 </body>
 </html>
