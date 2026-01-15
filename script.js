@@ -558,3 +558,33 @@ function updateDashboardProgress() {
     if (pctText) pctText.textContent = `${pct}% complete`;
   });
 }
+function updateDashboardProgress() {
+  const cards = document.querySelectorAll(".card[data-page][data-total]");
+
+  cards.forEach((card) => {
+    const pageKey = card.getAttribute("data-page");
+    const total = Number(card.getAttribute("data-total") || 0);
+
+    let completed = 0;
+
+    // Expected storage key format: progress_<pageKey>
+    // Expected value: JSON like {"completed": 3}
+    try {
+      const raw = localStorage.getItem(`progress_${pageKey}`);
+      if (raw) {
+        const obj = JSON.parse(raw);
+        completed = Number(obj.completed || 0);
+      }
+    } catch (e) {
+      completed = 0;
+    }
+
+    const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+    const fill = card.querySelector(".progress-bar span");
+    const label = card.querySelector(".percentage");
+
+    if (fill) fill.style.width = `${pct}%`;
+    if (label) label.textContent = `${pct}% complete`;
+  });
+}
