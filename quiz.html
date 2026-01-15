@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice Exam</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+  <!-- Call loadQuiz() on page load; quizData is already loaded via quizData.js -->
+  <body onload="loadQuiz()">
+  <header>
+    <h1>Practice Exam</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+  <div class="container">
+    <!-- Timer display -->
+    <div id="quiz-timer" class="quiz-timer"></div>
+    <!-- Live score display -->
+    <div id="quiz-stats" class="quiz-stats"></div>
+    <!-- Navigation panel -->
+    <div id="quiz-navigation" class="quiz-navigation"></div>
+    <div class="quiz-container">
+      <div id="quiz-question" class="quiz-question"></div>
+      <div id="quiz-options" class="quiz-options"></div>
+      <div class="quiz-actions">
+        <button class="btn-primary" onclick="nextQuestion()">Next</button>
+        <button class="btn-secondary" id="flag-btn" onclick="flagQuestion()">Flag for Review</button>
+        <button class="btn-secondary" onclick="restartQuiz()">Restart</button>
+        <button class="btn-secondary" onclick="openCalculator()">Calculator</button>
+      </div>
+      <div id="quiz-score" class="quiz-score"></div>
+    </div>
+  </div>
+  <!-- Load the quiz data before the main script -->
+  <script src="quizData.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

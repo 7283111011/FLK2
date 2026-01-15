@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criminal Law &amp; Practice</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body onload="initCheckboxes('criminal_law')">
+  <header>
+    <h1>Criminal Law &amp; Practice</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../quiz.html">Practice Exam</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h2>Procedures and Practice in Criminal Litigation</h2>
+    <!-- Section 1: Police Station Advice -->
+    <div class="topic-section" id="claw-sec1">
+      <h3>Advising Clients at the Police Station</h3>
+      <p id="claw-par1">Suspects detained by the police have key rights under the Police and Criminal Evidence Act 1984 (PACE) and its Codes. They have the right to consult a solicitor in private at any time, and the police must not dissuade them from obtaining legal advice or delay access. A detainee may also request that someone be informed of their arrest, and detention must be periodically reviewed. They are entitled to at least eight continuous hours of rest in every 24‑hour period while in custody. Legal advisers should inform clients of these rights, ensure that interviews are conducted properly and assist vulnerable clients who may require an appropriate adult.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="claw1"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('claw-par1')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Detainees have the right to consult a solicitor in private at any time and must be allowed at least eight continuous hours’ rest in every 24‑hour period.</span>
+        <label><input type="radio" name="claw-tf1" value="true"> True</label>
+        <label><input type="radio" name="claw-tf1" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('claw-tf1','true')">Check</button>
+        <div class="feedback" id="claw-tf1-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 2: Identification Procedures -->
+    <div class="topic-section" id="claw-sec2">
+      <h3>Identification Procedures</h3>
+      <p id="claw-par2">PACE Code D governs identification procedures. A formal identification procedure (such as a video identification parade) is generally required where the suspect is not known to the witness. If the witness states that they already know the suspect, a procedure will serve no useful purpose and is not required. Different procedures include video identification, group identifications and confrontations. Police must record reasons for selecting a particular procedure and ensure that the suspect’s solicitor is given notice and an opportunity to attend.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="claw2"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('claw-par2')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: A formal identification procedure is not required if the witness already recognises the suspect, as such a procedure would serve no useful purpose.</span>
+        <label><input type="radio" name="claw-tf2" value="true"> True</label>
+        <label><input type="radio" name="claw-tf2" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('claw-tf2','true')">Check</button>
+        <div class="feedback" id="claw-tf2-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 3: Advising on Interviews and the Right to Silence -->
+    <div class="topic-section" id="claw-sec3">
+      <h3>Interview Procedure and the Right to Silence</h3>
+      <p id="claw-par3">During a PACE interview, a solicitor ensures that the suspect understands the caution and advises on whether to answer questions. The right to silence allows a suspect to remain silent, but adverse inferences may be drawn at trial under sections 34–37 of the Criminal Justice and Public Order Act 1994 if questions are not answered without good reason. Solicitors must warn clients of potential adverse inferences and balance this against the benefits of providing an account. Vulnerable clients should have an appropriate adult present and interviews must be conducted fairly; oppressive questioning renders confessions inadmissible under PACE.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="claw3"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('claw-par3')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: A suspect’s decision to remain silent may result in adverse inferences at trial, but interviews must be conducted fairly and oppressive questioning can render a confession inadmissible.</span>
+        <label><input type="radio" name="claw-tf3" value="true"> True</label>
+        <label><input type="radio" name="claw-tf3" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('claw-tf3','true')">Check</button>
+        <div class="feedback" id="claw-tf3-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 4: Bail Applications -->
+    <div class="topic-section" id="claw-sec4">
+      <h3>Bail Applications</h3>
+      <p id="claw-par4">Under section 4 of the Bail Act 1976 a person charged with an offence has a general right to bail. Bail may be refused only if specific exceptions apply, such as substantial grounds for believing the defendant would fail to surrender, commit further offences or interfere with witnesses; the court must give reasons for refusal. Conditions may be imposed where necessary to ensure surrender or protect the public. Repeat applications require a change in circumstances. Appeals may be made to a Crown Court judge if bail is refused by magistrates.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="claw4"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('claw-par4')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Under the Bail Act 1976, bail is the default and may only be refused if statutory exceptions apply; reasons for refusal must be stated.</span>
+        <label><input type="radio" name="claw-tf4" value="true"> True</label>
+        <label><input type="radio" name="claw-tf4" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('claw-tf4','true')">Check</button>
+        <div class="feedback" id="claw-tf4-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 5: First Hearings and Plea Before Venue -->
+    <div class="topic-section" id="claw-sec5">
+      <h3>First Hearings and Plea Before Venue</h3>
+      <p id="claw-par5">At the first hearing in the magistrates’ court the defendant is asked to enter a plea. Offences are categorised as summary only, indictable only or either way. For either‑way offences the plea before venue determines whether the case proceeds summarily or is sent to the Crown Court. The court considers the seriousness of the offence and the adequacy of its powers; the defendant can elect Crown Court trial if committed for trial. Representation orders should be obtained where eligibility criteria are met. Failure to appear may lead to a warrant and separate offence.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="claw5"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('claw-par5')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: In plea before venue for an either‑way offence, the magistrates must decide whether the case is suitable for summary trial; the defendant may elect Crown Court trial if the case is sent.</span>
+        <label><input type="radio" name="claw-tf5" value="true"> True</label>
+        <label><input type="radio" name="claw-tf5" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('claw-tf5','true')">Check</button>
+        <div class="feedback" id="claw-tf5-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 6: Allocation and Sending -->
+    <div class="topic-section" id="claw-sec6">
+      <h3>Allocation and Sending to the Crown Court</h3>
+      <p id="claw-par6">Either‑way offences are allocated under sections 17A–26 of the Magistrates’ Courts Act 1980. The court must consider representations from the prosecution and defence as to venue and decide whether the offence is suitable for summary trial. Factors include the nature of the offence, the defendant’s record and whether the likely sentence exceeds the magistrates’ powers. Indictable‑only offences and certain linked matters are sent forthwith to the Crown Court under section 51 of the Crime and Disorder Act 1998. The Sentencing Act 2020 sections 14–20 govern committal for sentence when magistrates lack sufficient powers. </p>
+      <div class="controls">
+        <input type="checkbox" data-id="claw6"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('claw-par6')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: For either‑way offences the magistrates decide allocation based on the seriousness of the case; indictable‑only offences are sent directly to the Crown Court under section 51 of the Crime and Disorder Act 1998.</span>
+        <label><input type="radio" name="claw-tf6" value="true"> True</label>
+        <label><input type="radio" name="claw-tf6" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('claw-tf6','true')">Check</button>
+        <div class="feedback" id="claw-tf6-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 7: Case Management and Evidence -->
+    <div class="topic-section" id="claw-sec7">
+      <h3>Case Management and Evidential Rules</h3>
+      <p id="claw-par7">Effective case management promotes the fair and efficient conduct of criminal cases. Magistrates’ courts issue case management directions; the Crown Court holds Plea and Trial Preparation Hearings. The Criminal Procedure Rules require early disclosure of prosecution and defence cases and encourage the use of written witness statements. The burden of proof remains on the prosecution to prove guilt beyond reasonable doubt. Identification evidence must be treated with caution; the <em>Turnbull</em> guidelines require judges to warn juries of the risks of mistaken identification. Hearsay evidence may be admitted under statutory gateways in the Criminal Justice Act 2003 where the witness is unavailable or for business documents; confession evidence is admissible unless obtained by oppression or in circumstances that render it unreliable (section 76 PACE 1984) and may be excluded under section 78 PACE if admission would have an adverse effect on the fairness of proceedings. Bad character evidence is admissible through gateways in sections 98–101 of the Criminal Justice Act 2003 but may be excluded if unfair. </p>
+      <div class="controls">
+        <input type="checkbox" data-id="claw7"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('claw-par7')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: The prosecution must prove the defendant’s guilt beyond reasonable doubt; hearsay and bad character evidence may be admitted through statutory gateways but can be excluded if unfair.</span>
+        <label><input type="radio" name="claw-tf7" value="true"> True</label>
+        <label><input type="radio" name="claw-tf7" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('claw-tf7','true')">Check</button>
+        <div class="feedback" id="claw-tf7-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 8: Trial Procedure and Sentencing -->
+    <div class="topic-section" id="claw-sec8">
+      <h3>Trial Procedure and Sentencing</h3>
+      <p id="claw-par8">In a criminal trial the prosecution presents its case first, calling witnesses who are examined, cross‑examined and re‑examined. At the close of the prosecution case the defence may submit that there is no case to answer. The defence may then call its own evidence. Solicitors must observe court etiquette, avoid leading questions in examination‑in‑chief and advise on special measures for vulnerable witnesses. Sentencing is governed by statute and the Sentencing Council guidelines. The court considers the seriousness of the offence, aggravating and mitigating factors, and the offender’s culpability. Sentences include custodial sentences, suspended sentences, community orders, fines and discharges. Newton hearings determine disputed facts where a guilty plea has been entered.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="claw8"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('claw-par8')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: At the end of the prosecution case the defence may make a submission of no case to answer; sentencing is guided by statutory provisions and the Sentencing Council guidelines.</span>
+        <label><input type="radio" name="claw-tf8" value="true"> True</label>
+        <label><input type="radio" name="claw-tf8" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('claw-tf8','true')">Check</button>
+        <div class="feedback" id="claw-tf8-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 9: Appeals and Youth Court -->
+    <div class="topic-section" id="claw-sec9">
+      <h3>Appeals and Youth Court Procedure</h3>
+      <p id="claw-par9">Decisions of the magistrates’ court may be appealed to the Crown Court against conviction or sentence, or by way of case stated to the High Court on a point of law. Crown Court convictions may be appealed to the Court of Appeal; appellants require leave and must show that the conviction is unsafe or that the sentence was manifestly excessive. The youth court deals with defendants aged 10–17. It has special sentencing powers, including referral orders, youth rehabilitation orders and detention and training orders. Youth offenders jointly charged with adults may appear in adult courts, though the court must consider the welfare of the child. Sentencing guidelines for young people emphasise rehabilitation.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="claw9"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('claw-par9')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Appeals from the magistrates’ court go to the Crown Court or by case stated to the High Court, whereas Crown Court appeals lie to the Court of Appeal; the youth court deals with defendants aged 10–17 and emphasises rehabilitation.</span>
+        <label><input type="radio" name="claw-tf9" value="true"> True</label>
+        <label><input type="radio" name="claw-tf9" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('claw-tf9','true')">Check</button>
+        <div class="feedback" id="claw-tf9-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 10: Welsh Language and Other Considerations -->
+    <div class="topic-section" id="claw-sec10">
+      <h3>Welsh Language and Other Considerations</h3>
+      <p id="claw-par10">In Wales, the Welsh Language Act 1993 and subsequent legislation provide that parties may use the Welsh language in criminal proceedings. Courts must make arrangements for interpretation and translation as required. Practitioners should be aware of the linguistic rights of defendants and witnesses and ensure that bilingual documentation is provided where necessary. Other considerations include ensuring reasonable adjustments for disabled clients and respecting cultural diversity.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="claw10"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('claw-par10')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: In Welsh criminal proceedings parties may use the Welsh language, and courts must provide interpretation and translation under the Welsh Language Act 1993.</span>
+        <label><input type="radio" name="claw-tf10" value="true"> True</label>
+        <label><input type="radio" name="claw-tf10" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('claw-tf10','true')">Check</button>
+        <div class="feedback" id="claw-tf10-feedback"></div>
+      </div>
+    </div>
+    <p><strong>References:</strong> Key statutory provisions and rules governing police station advice and rest periods are found in PACE Code C. Identification procedures are governed by PACE Code D. The right to bail and reasons for refusal derive from the Bail Act 1976.</p>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>

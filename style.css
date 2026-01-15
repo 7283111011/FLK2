@@ -1,0 +1,284 @@
+/* Global styles for the study website */
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    /* Apply a gentle gradient background reminiscent of the referenced study deck */
+    background: linear-gradient(120deg, #e6ecfb 0%, #f7f9fe 100%);
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    /* Soften the header colour to harmonise with the gradient background */
+    background: #5c6bc0;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+nav a {
+    color: #fff;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+/* Dashboard styles */
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 280px;
+    text-align: center;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    background: #1a5276;
+    width: 0;
+}
+
+.card .percentage {
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+/* Topic page styles */
+.topic-section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #ffffff;
+    border-left: 4px solid #1a5276;
+    border-radius: 4px;
+}
+
+.topic-section h3 {
+    margin-top: 0;
+}
+
+.controls {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+button.speak-btn {
+    background: #1a5276;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+button.speak-btn:hover {
+    background: #154360;
+}
+
+.true-false {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.true-false label {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+}
+
+.true-false input[type="radio"] {
+    margin-right: 0.25rem;
+}
+
+.feedback {
+    margin-top: 0.25rem;
+    font-style: italic;
+    color: #006400;
+}
+
+/* Quiz styles */
+.quiz-container {
+    max-width: 700px;
+    margin: auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.quiz-question {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.quiz-options {
+    margin-top: 1rem;
+}
+
+.quiz-options label {
+    display: block;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.quiz-options label:hover {
+    background: #f0f0f0;
+}
+
+.quiz-actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Timer display */
+.quiz-timer {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+
+/* Navigation panel */
+.quiz-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+.quiz-navigation .nav-question {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 0.85rem;
+    user-select: none;
+}
+.quiz-navigation .nav-current {
+    border: 2px solid #007BFF;
+}
+/* Quiz navigation status colours */
+/* Correct answers shown in green */
+.quiz-navigation .nav-correct {
+    background-color: #d4edda;
+    color: #155724;
+}
+/* Incorrect answers shown in red */
+.quiz-navigation .nav-incorrect {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+/* Questions that have not yet been attempted */
+.quiz-navigation .nav-unanswered {
+    background-color: #e2e3e5;
+    color: #6c757d;
+}
+/* Flagged questions for review shown in yellow */
+.quiz-navigation .nav-flagged {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+/* Quiz option styling overrides for exam page */
+.quiz-option {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+.quiz-option input[type="radio"] {
+    margin-right: 6px;
+}
+
+.quiz-actions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #5c6bc0;
+    color: #ffffff;
+}
+
+.btn-secondary {
+    background: #9fa8da;
+    color: #ffffff;
+}
+
+.quiz-score {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Scoreboard display beneath the timer */
+.quiz-stats {
+    margin-top: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #5c6bc0;
+}

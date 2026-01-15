@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitors Accounts</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body onload="initCheckboxes('solicitors')">
+  <header>
+    <h1>Solicitors Accounts</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../quiz.html">Practice Exam</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h2>Core Knowledge Areas</h2>
+    <!-- Paragraph 1 -->
+    <div class="topic-section" id="sol-sec1">
+      <h3>Client Money and Client Accounts</h3>
+      <p id="sol-par1">Client money means money held or received in respect of a client matter. The Solicitors Regulation Authority (SRA) rules require solicitors to pay client money promptly into a client account and to hold it on trust for the client. Exceptions arise where money is received for fees paid up front or to discharge costs already incurred. Repayment to the client should be made promptly when no longer required. Accurate accounting entries must be made for receipts and payments.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="sol1"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('sol-par1')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Client money must be paid into a designated client account unless an exception applies.</span>
+        <label><input type="radio" name="sol-tf1" value="true"> True</label>
+        <label><input type="radio" name="sol-tf1" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('sol-tf1','true')">Check</button>
+        <div class="feedback" id="sol-tf1-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 2 -->
+    <div class="topic-section" id="sol-sec2">
+      <h3>Client Account Rules</h3>
+      <p id="sol-par2">A client account is an account held by a solicitor or firm with a bank or building society specifically designated as a “client account”. Firms must not use the client account to provide banking facilities for clients and must only make withdrawals for the proper purpose of the client matter. Withdrawals must be supported by written authorities and must be recorded promptly in client ledgers. The account should be named to indicate it is a client account and distinguish it from the firm’s own account.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="sol2"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('sol-par2')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: A client account must not be used as a banking facility for clients and withdrawals must relate to the client’s matter.</span>
+        <label><input type="radio" name="sol-tf2" value="true"> True</label>
+        <label><input type="radio" name="sol-tf2" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('sol-tf2','true')">Check</button>
+        <div class="feedback" id="sol-tf2-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 3 -->
+    <div class="topic-section" id="sol-sec3">
+      <h3>Segregation of Client Money</h3>
+      <p id="sol-par3">Rule 4.1 of the SRA Accounts Rules emphasises the fundamental principle that client money must be kept separate from the solicitor’s own funds. This protects clients’ money and ensures it can be returned on demand. Firms must maintain individual client ledgers and reconcile client accounts regularly. Mixed payments must be allocated promptly, and any residual client balances must be identified and returned.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="sol3"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('sol-par3')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Solicitors must keep client money separate from their own money and record transactions accurately.</span>
+        <label><input type="radio" name="sol-tf3" value="true"> True</label>
+        <label><input type="radio" name="sol-tf3" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('sol-tf3','true')">Check</button>
+        <div class="feedback" id="sol-tf3-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 4 -->
+    <div class="topic-section" id="sol-sec4">
+      <h3>Interest on Client Money</h3>
+      <p id="sol-par4">Firms must account to clients for interest on client money if it is fair and reasonable to do so. The firm should have a written interest policy explaining when interest will be paid. Interest received or paid out must be recorded in client ledgers. Interest earned on the client account may be retained by the firm if the firm has provided equivalent or greater interest to the client.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="sol4"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('sol-par4')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Solicitors must have a policy for paying interest on client money and must record interest earned or paid in client ledgers.</span>
+        <label><input type="radio" name="sol-tf4" value="true"> True</label>
+        <label><input type="radio" name="sol-tf4" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('sol-tf4','true')">Check</button>
+        <div class="feedback" id="sol-tf4-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 5 -->
+    <div class="topic-section" id="sol-sec5">
+      <h3>Breach of the Accounts Rules and Record Keeping</h3>
+      <p id="sol-par5">Breaches of the SRA Accounts Rules must be rectified promptly once discovered. Firms have a duty to investigate the cause of any discrepancies and take corrective action. Detailed records must be kept for each client matter, including ledger entries showing disbursements (using both agency and principal methods), transfers, bills, VAT, and reductions. Regular reconciliations between the client ledger and the client bank account must be carried out, and historic accounting records must be retained for the prescribed period.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="sol5"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('sol-par5')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Firms must promptly correct any breaches of the SRA Accounts Rules and maintain detailed client ledgers and reconciliations.</span>
+        <label><input type="radio" name="sol-tf5" value="true"> True</label>
+        <label><input type="radio" name="sol-tf5" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('sol-tf5','true')">Check</button>
+        <div class="feedback" id="sol-tf5-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 6 -->
+    <div class="topic-section" id="sol-sec6">
+      <h3>Joint Accounts, Third‑Party Accounts and Reporting</h3>
+      <p id="sol-par6">Joint client accounts may be opened where money is held jointly for two or more clients. A solicitor may also operate a client’s own account with proper authority and safeguards. Third‑party managed accounts are permitted in limited circumstances and must meet SRA conditions. Firms must obtain and deliver an accountant’s report to the SRA annually, unless exempt, and must retain accounting records for the required retention period.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="sol6"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('sol-par6')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Solicitors may operate a client’s own account or a joint account provided they comply with SRA requirements and obtain necessary consents.</span>
+        <label><input type="radio" name="sol-tf6" value="true"> True</label>
+        <label><input type="radio" name="sol-tf6" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('sol-tf6','true')">Check</button>
+        <div class="feedback" id="sol-tf6-feedback"></div>
+      </div>
+    </div>
+    <p><strong>References:</strong> The requirement to keep client money separate from the firm’s own money and maintain accurate records is a core principle of the SRA Accounts Rules.</p>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>

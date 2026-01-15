@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLK2 Study Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="updateDashboardProgress()">
+  <header>
+    <h1>SQE1 FLK2 Study Portal</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Practice Exam</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h2>Dashboard</h2>
+    <p>Select a topic to begin studying. Each card shows your completion progress. Your progress is saved in your browser.</p>
+    <div class="dashboard">
+      <div class="card" data-page="property" data-total="8">
+        <h2>Property Law &amp; Practice</h2>
+        <div class="progress-bar"><span></span></div>
+        <div class="percentage">0% complete</div>
+        <p><a href="topics/property.html">Study</a></p>
+      </div>
+      <div class="card" data-page="wills" data-total="8">
+        <h2>Wills &amp; Administration of Estates</h2>
+        <div class="progress-bar"><span></span></div>
+        <div class="percentage">0% complete</div>
+        <p><a href="topics/wills.html">Study</a></p>
+      </div>
+      <div class="card" data-page="solicitors" data-total="6">
+        <h2>Solicitors Accounts</h2>
+        <div class="progress-bar"><span></span></div>
+        <div class="percentage">0% complete</div>
+        <p><a href="topics/solicitors.html">Study</a></p>
+      </div>
+      <div class="card" data-page="land" data-total="6">
+        <h2>Land Law</h2>
+        <div class="progress-bar"><span></span></div>
+        <div class="percentage">0% complete</div>
+        <p><a href="topics/land.html">Study</a></p>
+      </div>
+      <div class="card" data-page="trusts" data-total="10">
+        <h2>Trusts Law</h2>
+        <div class="progress-bar"><span></span></div>
+        <div class="percentage">0% complete</div>
+        <p><a href="topics/trusts.html">Study</a></p>
+      </div>
+      <div class="card" data-page="criminal_liability" data-total="8">
+        <h2>Criminal Liability</h2>
+        <div class="progress-bar"><span></span></div>
+        <div class="percentage">0% complete</div>
+        <p><a href="topics/criminal_liability.html">Study</a></p>
+      </div>
+      <div class="card" data-page="criminal_law" data-total="10">
+        <h2>Criminal Law &amp; Practice</h2>
+        <div class="progress-bar"><span></span></div>
+        <div class="percentage">0% complete</div>
+        <p><a href="topics/criminal_law.html">Study</a></p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

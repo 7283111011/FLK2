@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+      background-color: #f8f9fa;
+    }
+    #calc-display {
+      width: 100%;
+      font-size: 1.4rem;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      text-align: right;
+    }
+    .calc-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 5px;
+    }
+    .calc-buttons button {
+      padding: 10px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 4px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+    .calc-buttons button:active {
+      background-color: #0056b3;
+    }
+    .calc-buttons .wide {
+      grid-column: span 2;
+    }
+  </style>
+</head>
+<body>
+  <input id="calc-display" type="text" readonly>
+  <div class="calc-buttons">
+    <button onclick="appendValue('7')">7</button>
+    <button onclick="appendValue('8')">8</button>
+    <button onclick="appendValue('9')">9</button>
+    <button onclick="appendValue('/')">/</button>
+    <button onclick="appendValue('4')">4</button>
+    <button onclick="appendValue('5')">5</button>
+    <button onclick="appendValue('6')">6</button>
+    <button onclick="appendValue('*')">*</button>
+    <button onclick="appendValue('1')">1</button>
+    <button onclick="appendValue('2')">2</button>
+    <button onclick="appendValue('3')">3</button>
+    <button onclick="appendValue('-')">-</button>
+    <button class="wide" onclick="appendValue('0')">0</button>
+    <button onclick="appendValue('.')">.</button>
+    <button onclick="appendValue('+')">+</button>
+    <button class="wide" onclick="calculate()">=</button>
+    <button class="wide" onclick="clearDisplay()">C</button>
+  </div>
+  <script>
+    const display = document.getElementById('calc-display');
+    function appendValue(val) {
+      display.value += val;
+    }
+    function clearDisplay() {
+      display.value = '';
+    }
+    function calculate() {
+      try {
+        const result = eval(display.value);
+        display.value = result;
+      } catch (e) {
+        display.value = 'Error';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criminal Liability</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body onload="initCheckboxes('criminal_liability')">
+  <header>
+    <h1>Criminal Liability</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../quiz.html">Practice Exam</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h2>Core Principles of Criminal Liability</h2>
+    <!-- Section 1: Offences Against the Person -->
+    <div class="topic-section" id="cl-sec1">
+      <h3>Offences Against the Person</h3>
+      <p id="cl-par1">Common assault covers two separate offences: assault (causing another to apprehend immediate unlawful violence) and battery (the application of unlawful force). Section 47 of the Offences Against the Person Act 1861 (OAPA) creates the offence of assault occasioning actual bodily harm (ABH); it requires proof of an assault or battery which causes more than transient or trifling injury and can include medically recognised psychiatric injury. Section 20 OAPA makes it an offence unlawfully and maliciously to wound or inflict grievous bodily harm (GBH); the prosecution must prove that the defendant foresaw some physical harm, though not necessarily serious harm. Section 18 OAPA is the more serious offence of wounding or causing GBH with intent, requiring a specific intention to cause serious injury.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="cl1"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('cl-par1')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Assault occasioning actual bodily harm under section 47 OAPA requires proof of assault or battery causing more than transient injury, including medically recognised psychiatric injury.</span>
+        <label><input type="radio" name="cl-tf1" value="true"> True</label>
+        <label><input type="radio" name="cl-tf1" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('cl-tf1','true')">Check</button>
+        <div class="feedback" id="cl-tf1-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 2: Theft and Property Offences -->
+    <div class="topic-section" id="cl-sec2">
+      <h3>Theft and Property Offences</h3>
+      <p id="cl-par2">Section 1 of the Theft Act 1968 defines theft as the dishonest appropriation of property belonging to another with the intention to permanently deprive the owner. Appropriation includes any assumption of the rights of the owner, even if the property was originally obtained innocently. Robbery (section 8) is theft accompanied by the use or threat of force; burglary (sections 9 and 10) involves entering a building as a trespasser with intent to steal or committing certain offences therein; aggravated burglary involves having a weapon. Handling stolen goods (section 22) requires knowledge or belief that the goods are stolen. Fraud offences, including obtaining services dishonestly and making off without payment, are governed by the Theft Act 1978 and Fraud Act 2006.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="cl2"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('cl-par2')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Theft is defined as the dishonest appropriation of property belonging to another with the intention to permanently deprive the owner.</span>
+        <label><input type="radio" name="cl-tf2" value="true"> True</label>
+        <label><input type="radio" name="cl-tf2" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('cl-tf2','true')">Check</button>
+        <div class="feedback" id="cl-tf2-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 3: Criminal Damage -->
+    <div class="topic-section" id="cl-sec3">
+      <h3>Criminal Damage and Arson</h3>
+      <p id="cl-par3">Criminal damage under the Criminal Damage Act 1971 involves destroying or damaging property belonging to another without lawful excuse. A person has a lawful excuse if they believed the owner would have consented or that the property was in immediate need of protection. Aggravated criminal damage requires that the destruction or damage endangers life. Arson is criminal damage caused by fire and may be charged as simple or aggravated depending on the risk to life. The mens rea for basic criminal damage is intention or recklessness as to damage; aggravated offences also require intention or recklessness as to endangering life.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="cl3"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('cl-par3')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Aggravated criminal damage requires that the defendant intended or was reckless as to endangering life as well as damaging property.</span>
+        <label><input type="radio" name="cl-tf3" value="true"> True</label>
+        <label><input type="radio" name="cl-tf3" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('cl-tf3','true')">Check</button>
+        <div class="feedback" id="cl-tf3-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 4: Homicide -->
+    <div class="topic-section" id="cl-sec4">
+      <h3>Homicide: Murder and Manslaughter</h3>
+      <p id="cl-par4">Murder is committed when a person unlawfully kills another human being with the intention to kill or cause grievous bodily harm. Voluntary manslaughter occurs when murder is mitigated by a partial defence such as loss of control or diminished responsibility. Involuntary manslaughter includes unlawful act manslaughter (killing through an unlawful and dangerous act) and manslaughter by gross negligence (death resulting from a breach of duty of care accompanied by a risk of death). The actus reus of homicide is causing the death of a person; the mens rea distinguishes the degrees of liability.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="cl4"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('cl-par4')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Murder requires an intention to kill or cause grievous bodily harm, whereas manslaughter may arise where the killing is mitigated by a partial defence or where the defendant lacked the mens rea for murder.</span>
+        <label><input type="radio" name="cl-tf4" value="true"> True</label>
+        <label><input type="radio" name="cl-tf4" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('cl-tf4','true')">Check</button>
+        <div class="feedback" id="cl-tf4-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 5: Fraud Offences -->
+    <div class="topic-section" id="cl-sec5">
+      <h3>Fraud by False Representation</h3>
+      <p id="cl-par5">Section 2 of the Fraud Act 2006 provides that a person commits fraud by false representation if they dishonestly make a representation which is false or misleading, knowing that it is or might be untrue and intending by the representation to make a gain or cause loss or risk of loss to another. The representation may be express or implied and may relate to fact or law. Dishonesty is judged by the objective standards of ordinary decent people; belief that the conduct is customary or encouraged by employers does not render it honest. Other types of fraud include fraud by failing to disclose information and fraud by abuse of position.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="cl5"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('cl-par5')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Fraud by false representation requires a dishonest representation that is false or misleading and the defendant must intend to make a gain or cause loss.</span>
+        <label><input type="radio" name="cl-tf5" value="true"> True</label>
+        <label><input type="radio" name="cl-tf5" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('cl-tf5','true')">Check</button>
+        <div class="feedback" id="cl-tf5-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 6: General Defences -->
+    <div class="topic-section" id="cl-sec6">
+      <h3>General Defences: Intoxication and Self‑Defence</h3>
+      <p id="cl-par6">Voluntary intoxication is not a true defence to criminal liability. In <em>DPP v Majewski</em> the House of Lords held that voluntary intoxication provides no defence to crimes of basic intent; it may only prevent conviction of specific intent offences if the defendant was so intoxicated that they lacked the required intent. Involuntary intoxication may provide a complete defence if it negates the mens rea. Self‑defence is governed by the common law and section 3 of the Criminal Law Act 1967, as clarified by section 76 of the Criminal Justice and Immigration Act 2008: a person may use reasonable force in defence of themselves or another; the reasonableness of the force is assessed in light of the circumstances as the defendant believed them to be, but force will not be reasonable if it is disproportionate or excessive.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="cl6"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('cl-par6')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Voluntary intoxication is not a defence to basic intent offences, though it may prevent conviction of specific intent offences if the defendant lacked the required intent.</span>
+        <label><input type="radio" name="cl-tf6" value="true"> True</label>
+        <label><input type="radio" name="cl-tf6" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('cl-tf6','true')">Check</button>
+        <div class="feedback" id="cl-tf6-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 7: Partial Defences -->
+    <div class="topic-section" id="cl-sec7">
+      <h3>Partial Defences: Loss of Control and Diminished Responsibility</h3>
+      <p id="cl-par7">Partial defences reduce murder to voluntary manslaughter. The loss of control defence, created by sections 54–56 of the Coroners and Justice Act 2009, applies where the defendant kills while suffering a loss of self‑control triggered by a qualifying fear or anger trigger and where a person of the same sex and age with normal tolerance might have reacted similarly. The loss need not be sudden and cannot arise from a considered desire for revenge. Diminished responsibility, under section 2 of the Homicide Act 1957 as amended by section 52 of the Coroners and Justice Act 2009, applies where the defendant was suffering from an abnormality of mental functioning arising from a recognised medical condition which substantially impaired their ability to understand their conduct, form rational judgements or exercise self‑control and explains the killing. The burden rests on the defendant to prove the defence on the balance of probabilities.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="cl7"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('cl-par7')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: The loss of control defence requires a loss of self‑control with a qualifying trigger and is unavailable if the defendant acted in a considered desire for revenge; diminished responsibility requires an abnormality of mental functioning that substantially impairs the defendant’s ability to understand conduct, form rational judgements or exercise self‑control.</span>
+        <label><input type="radio" name="cl-tf7" value="true"> True</label>
+        <label><input type="radio" name="cl-tf7" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('cl-tf7','true')">Check</button>
+        <div class="feedback" id="cl-tf7-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 8: Parties and Inchoate Offences -->
+    <div class="topic-section" id="cl-sec8">
+      <h3>Parties and Inchoate Offences</h3>
+      <p id="cl-par8">Criminal liability can arise for principal offenders who commit the actus reus and for secondary parties who aid, abet, counsel or procure the commission of an offence. Accomplices are liable if they intentionally assist or encourage the principal and share the requisite mens rea. Inchoate offences include attempts (trying to commit an offence with intent to commit it), conspiracy (agreement between two or more persons to commit an offence) and encouraging or assisting crime under the Serious Crime Act 2007. Liability for an attempt requires an act which is more than merely preparatory towards committing the full offence, coupled with the intention to complete the offence.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="cl8"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('cl-par8')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: A person who intentionally assists or encourages a principal offender may be liable as an accomplice, and an attempt requires an act more than merely preparatory coupled with intention to commit the full offence.</span>
+        <label><input type="radio" name="cl-tf8" value="true"> True</label>
+        <label><input type="radio" name="cl-tf8" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('cl-tf8','true')">Check</button>
+        <div class="feedback" id="cl-tf8-feedback"></div>
+      </div>
+    </div>
+    <p><strong>References:</strong> Offences against the person are described in the CPS guidance on ABH and GBH. The definition of theft is taken from section 1 of the Theft Act 1968. Fraud by false representation is defined by section 2 of the Fraud Act 2006. The general rule on voluntary intoxication comes from academic commentary on criminal justice. Self‑defence is governed by the Criminal Justice and Immigration Act 2008. The partial defences of loss of control and diminished responsibility are set out in the Coroners and Justice Act 2009 and Homicide Act 1957.</p>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>

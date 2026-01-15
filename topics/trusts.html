@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trusts Law</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body onload="initCheckboxes('trusts')">
+  <header>
+    <h1>Trusts Law</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../quiz.html">Practice Exam</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h2>Core Topics in Trusts Law</h2>
+    <!-- Section 1: Creation and Certainties -->
+    <div class="topic-section" id="trust-sec1">
+      <h3>Creation of Express Trusts: The Three Certainties</h3>
+      <p id="trust-par1">An express trust is valid only if the settlor demonstrates the three certainties identified in <em>Knight v Knight</em>: certainty of intention to create a trust, certainty of subject matter (the property and shares must be clearly identifiable) and certainty of objects (the beneficiaries must be ascertainable). Imperative wording is needed to show intention; precatory expressions such as “in full confidence” may not suffice. The trust property must be segregated or quantifiable; cases such as <em>Re London Wine Co</em> and <em>Hunter v Moss</em> illustrate that unascertained bulk goods may fail for uncertainty. If any certainty is lacking, the purported trust fails and the property may pass as a gift or result back to the settlor.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="trust1"> Mark as read
+      <button class="speak-btn" onclick="toggleSpeech('trust-par1', this)">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: A valid express trust requires certainty of intention, subject matter and objects; if any certainty is missing, the trust fails.</span>
+        <label><input type="radio" name="trust-tf1" value="true"> True</label>
+        <label><input type="radio" name="trust-tf1" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('trust-tf1','true')">Check</button>
+        <div class="feedback" id="trust-tf1-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 2: Beneficial Interests and Saunders v Vautier -->
+    <div class="topic-section" id="trust-sec2">
+      <h3>Beneficial Entitlement and the Rule in <em>Saunders v Vautier</em></h3>
+      <p id="trust-par2">Beneficial interests under a trust may be fixed, giving each beneficiary a specified share; discretionary, where trustees choose how and when to distribute between a class; vested (entitled immediately) or contingent (dependent on a future event). When all beneficiaries are of full age and capacity and together absolutely entitled to the trust property, they may collectively terminate the trust and demand transfer of the legal estate – this is the rule in <em>Saunders v Vautier</em>. The rule illustrates that the beneficiaries, not the settlor, ultimately control the trust when the beneficial interests are unrestricted.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="trust2"> Mark as read
+      <button class="speak-btn" onclick="toggleSpeech('trust-par2', this)">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Under the rule in <em>Saunders v Vautier</em>, adult beneficiaries who together are absolutely entitled may require trustees to terminate the trust and transfer the property to them.</span>
+        <label><input type="radio" name="trust-tf2" value="true"> True</label>
+        <label><input type="radio" name="trust-tf2" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('trust-tf2','true')">Check</button>
+        <div class="feedback" id="trust-tf2-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 3: Charitable and Non‑Charitable Purpose Trusts -->
+    <div class="topic-section" id="trust-sec3">
+      <h3>Charitable Trusts and Non‑Charitable Purpose Trusts</h3>
+      <p id="trust-par3">Charitable trusts are trusts for purposes recognised as charitable and for the public benefit. They are enforceable by the Attorney General and enjoy tax advantages. Non‑charitable purpose trusts, by contrast, are generally void because there is no beneficiary to enforce the trust, unless they fall within limited exceptions (such as trusts for the maintenance of graves or animals). A valid trust must therefore either benefit identifiable beneficiaries or fall within a recognised charitable purpose.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="trust3"> Mark as read
+      <button class="speak-btn" onclick="toggleSpeech('trust-par3', this)">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: A non‑charitable purpose trust will generally be void because there is no beneficiary to enforce it.</span>
+        <label><input type="radio" name="trust-tf3" value="true"> True</label>
+        <label><input type="radio" name="trust-tf3" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('trust-tf3','true')">Check</button>
+        <div class="feedback" id="trust-tf3-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 4: Resulting Trusts -->
+    <div class="topic-section" id="trust-sec4">
+      <h3>Resulting Trusts</h3>
+      <p id="trust-par4">A resulting trust arises when beneficial ownership reverts to the transferor because the intended disposition does not exhaust the beneficial interest. Resulting trusts may be automatic (where the settlor does not dispose of the entire beneficial interest) or presumed (arising from voluntary transfers or contributions to purchase price where there is no evidence of gift). As explained in equity texts, resulting trusts operate because equity presumes that the transferor did not intend to part with the whole beneficial interest. Presumed resulting trusts are rebuttable if evidence of gift exists.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="trust4"> Mark as read
+      <button class="speak-btn" onclick="toggleSpeech('trust-par4', this)">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: A resulting trust may arise automatically when a settlor fails to dispose of the entire beneficial interest or is presumed where a person transfers property without receiving consideration.</span>
+        <label><input type="radio" name="trust-tf4" value="true"> True</label>
+        <label><input type="radio" name="trust-tf4" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('trust-tf4','true')">Check</button>
+        <div class="feedback" id="trust-tf4-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 5: Trusts of the Family Home -->
+    <div class="topic-section" id="trust-sec5">
+      <h3>Trusts of the Family Home and Proprietary Estoppel</h3>
+      <p id="trust-par5">Disputes over beneficial interests in family homes often involve common intention constructive trusts. To establish such a trust, the claimant must show (i) a common intention that both parties would share ownership (express or inferred from conduct) and (ii) detrimental reliance on that intention. The doctrine evolved to prevent unconscionable denial of interests where legal formalities were absent. Courts consider contributions to purchase price, mortgage payments, household expenses and the whole course of dealing to infer intention. Once a trust is established, the court will quantify the parties’ shares based on their dealings. Proprietary estoppel may arise where one party acts to their detriment on an assurance of rights in property; the court may award an equitable remedy to satisfy the equity.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="trust5"> Mark as read
+      <button class="speak-btn" onclick="toggleSpeech('trust-par5', this)">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: A common intention constructive trust in a family home requires proof of a shared intention to share ownership and detrimental reliance on that intention.</span>
+        <label><input type="radio" name="trust-tf5" value="true"> True</label>
+        <label><input type="radio" name="trust-tf5" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('trust-tf5','true')">Check</button>
+        <div class="feedback" id="trust-tf5-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 6: Fiduciary Duties and Liability of Strangers -->
+    <div class="topic-section" id="trust-sec6">
+      <h3>Fiduciary Duties and Liability of Third Parties</h3>
+      <p id="trust-par6">Trustees and other fiduciaries must act honestly, in good faith and solely for the benefit of beneficiaries. They must not profit from their position or place themselves in a position where their duty and personal interest conflict. In <em>Keech v Sandford</em>, the trustee renewed a lease for himself when holding it on trust for an infant; the court held that even an honest trustee cannot retain a benefit obtained through trust property and must account for it. Third parties may be liable to account as constructive trustees if they knowingly receive trust property in breach of trust or assist the trustee in a dishonest design. Accessory (dishonest assistance) and recipient (knowing receipt) liability ensure that strangers who participate in a breach of trust are accountable to beneficiaries.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="trust6"> Mark as read
+      <button class="speak-btn" onclick="toggleSpeech('trust-par6', this)">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Trustees must avoid conflicts of interest and may not profit from their position; third parties who knowingly assist in or receive property from a breach of trust may be liable as constructive trustees.</span>
+        <label><input type="radio" name="trust-tf6" value="true"> True</label>
+        <label><input type="radio" name="trust-tf6" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('trust-tf6','true')">Check</button>
+        <div class="feedback" id="trust-tf6-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 7: Trustees’ Powers and Duties -->
+    <div class="topic-section" id="trust-sec7">
+      <h3>Trustees: Appointment, Powers and Duties</h3>
+      <p id="trust-par7">Anyone with capacity may act as a trustee. Trustees may be appointed by the settlor, by the trust instrument, by existing trustees or by the court. Trustees owe a duty of care to act with such skill and care as is reasonable in the circumstances and must invest trust property prudently. The Trustee Act 2000 confers a general power of investment but requires trustees to consider the suitability of investments, diversification and to obtain proper advice unless unnecessary. Trustees have statutory powers of maintenance and advancement and must act jointly unless the trust instrument provides otherwise. They may be removed or replaced under the Trustee Act 1925 or by the court. Breaches of trust expose trustees to personal liability to restore the trust fund; defences include beneficiary consent, exoneration clauses and the statutory limitation period.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="trust7"> Mark as read
+      <button class="speak-btn" onclick="toggleSpeech('trust-par7', this)">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Trustees must exercise reasonable care and skill when investing trust property and are required by the Trustee Act 2000 to consider suitability, diversification and advice.</span>
+        <label><input type="radio" name="trust-tf7" value="true"> True</label>
+        <label><input type="radio" name="trust-tf7" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('trust-tf7','true')">Check</button>
+        <div class="feedback" id="trust-tf7-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 8: Formalities and Constitution of Express Trusts -->
+    <div class="topic-section" id="trust-sec8">
+      <h3>Formalities and Constitution of Express Trusts</h3>
+      <p id="trust-par8">To create a valid express trust, the settlor must comply with statutory formalities. Trusts of personal property may be declared orally or in writing, but a declaration of trust of land must be evidenced in writing and signed by the person declaring it in accordance with section 53(1)(b) of the Law of Property Act 1925. The constitution of an express trust requires the settlor to either transfer the legal title to the trustees or make a self‑declaration of trust. The maxim “equity will not perfect an imperfect gift” (from <em>Milroy v Lord</em>) means a trust is not constituted until the settlor has done everything necessary to transfer legal title; equity will not assist a volunteer. Exceptions are limited and include cases where the settlor has done all in their power to transfer the property (as in <em>Re Rose</em>) or equitable principles such as <em>donatio mortis causa</em>.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="trust8"> Mark as read
+        <button class="speak-btn" onclick="toggleSpeech('trust-par8', this)">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: A declaration of trust of land must be evidenced in writing and signed; otherwise the trust is unenforceable.</span>
+        <label><input type="radio" name="trust-tf8" value="true"> True</label>
+        <label><input type="radio" name="trust-tf8" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('trust-tf8','true')">Check</button>
+        <div class="feedback" id="trust-tf8-feedback"></div>
+      </div>
+    </div>
+
+    <!-- Section 9: Trustees’ Liability for Breach and Protection -->
+    <div class="topic-section" id="trust-sec9">
+      <h3>Trustees’ Liability for Breach and Protection</h3>
+      <p id="trust-par9">Trustees commit a breach of trust when they act outside their powers or fail to discharge their duties. A trustee who breaches the trust is personally liable to restore the trust fund to the position it would have been in but for the breach. Liability is generally joint and several, and the measure of liability is the loss suffered by the trust. Trustees may be relieved from personal liability if they acted honestly and reasonably and the court exercises its discretion under section 61 of the Trustee Act 1925. Trustees benefit from exoneration clauses in the trust instrument and can rely on limitation periods; claims must usually be brought within six years of the breach, although there is no limitation period for fraud or to recover trust property still held by the trustee.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="trust9"> Mark as read
+        <button class="speak-btn" onclick="toggleSpeech('trust-par9', this)">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: A trustee who breaches the trust is personally liable to make good the loss unless the court relieves them under section 61 of the Trustee Act 1925.</span>
+        <label><input type="radio" name="trust-tf9" value="true"> True</label>
+        <label><input type="radio" name="trust-tf9" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('trust-tf9','true')">Check</button>
+        <div class="feedback" id="trust-tf9-feedback"></div>
+      </div>
+    </div>
+
+    <!-- Section 10: Equitable Remedies and Tracing -->
+    <div class="topic-section" id="trust-sec10">
+      <h3>Equitable Remedies and Tracing</h3>
+      <p id="trust-par10">Equity provides discretionary remedies when common law damages are inadequate. These include injunctions to restrain wrongful conduct, specific performance to compel performance of obligations, rescission to unwind transactions procured by fraud or undue influence, and declarations of trust. Tracing is an evidential process rather than a remedy: it allows a claimant to identify and follow property into its substituted form and assert a proprietary claim to the substitute. Equitable tracing is flexible and allows beneficiaries to follow misapplied trust property into mixed funds and claim a proportionate share, although it cannot trace into the hands of a bona fide purchaser for value without notice or where the property has been dissipated.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="trust10"> Mark as read
+        <button class="speak-btn" onclick="toggleSpeech('trust-par10', this)">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Equitable tracing allows beneficiaries to follow misapplied trust property into mixed funds and assert a proprietary claim, but it is not itself a remedy.</span>
+        <label><input type="radio" name="trust-tf10" value="true"> True</label>
+        <label><input type="radio" name="trust-tf10" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('trust-tf10','true')">Check</button>
+        <div class="feedback" id="trust-tf10-feedback"></div>
+      </div>
+    </div>
+
+    <p><strong>References:</strong> The sections above draw on academic explanations of the three certainties of express trusts; the concept of resulting trusts; the doctrine of common intention constructive trusts; the fiduciary duty not to profit from trust property as illustrated in <em>Keech v Sandford</em>; commentary on trustees’ duties to invest under the Trustee Act 2000; the formalities and constitution of express trusts and the maxim that equity will not perfect an imperfect gift; the law governing trustees’ liability for breach and relief under section 61 of the Trustee Act 1925; and equitable remedies and tracing principles.</p>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>

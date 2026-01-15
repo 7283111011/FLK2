@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Law &amp; Practice</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body onload="initCheckboxes('property')">
+  <header>
+    <h1>Property Law &amp; Practice</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../quiz.html">Practice Exam</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h2>Core Knowledge Areas</h2>
+    <!-- Paragraph 1 -->
+    <div class="topic-section" id="prop-sec1">
+      <h3>Investigating Title and Pre‑Contract Enquiries</h3>
+      <p id="prop-par1">When acting on the purchase of a freehold, practitioners must analyse the Land Registry official copy entries for registered titles and deduce ownership from the epitome of title when dealing with unregistered land. The investigation includes reviewing charges, restrictions and notices and making appropriate requisitions. Pre‑contract searches (such as local authority, drainage and environmental searches) and written enquiries reveal matters like planning permissions, rights of way and outstanding obligations. Reporting to the client summarises the results and advises on risks and further action. The Law Society’s Conveyancing Protocol guides these steps to ensure a standardised approach.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="prop1"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('prop-par1')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Investigating a registered title requires examination of the Land Registry official copy entries and making appropriate searches and enquiries.</span>
+        <label><input type="radio" name="prop-tf1" value="true"> True</label>
+        <label><input type="radio" name="prop-tf1" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('prop-tf1','true')">Check</button>
+        <div class="feedback" id="prop-tf1-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 2 -->
+    <div class="topic-section" id="prop-sec2">
+      <h3>Finance and Acting for Lenders</h3>
+      <p id="prop-par2">Property purchases are commonly financed by mortgages. Solicitors must advise on sources of finance and the different types of mortgages (capital and interest repayment, interest‑only, fixed or variable rates). When acting for a lender, practitioners ensure the lender’s requirements are met, prepare a certificate of title confirming that the mortgage will be a first legal charge and that the property has good title, and ensure that the mortgage deed is properly executed.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="prop2"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('prop-par2')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: A solicitor acting for a lender must provide a certificate of title confirming that the mortgage will constitute a first legal charge over the property.</span>
+        <label><input type="radio" name="prop-tf2" value="true"> True</label>
+        <label><input type="radio" name="prop-tf2" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('prop-tf2','true')">Check</button>
+        <div class="feedback" id="prop-tf2-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 3 -->
+    <div class="topic-section" id="prop-sec3">
+      <h3>Contracts, Completion and Remedies</h3>
+      <p id="prop-par3">Standard Conditions of Sale and Standard Commercial Property Conditions govern property contracts. Special conditions may modify these terms. Deposits are usually held by the seller’s solicitor as stakeholder, though occasionally as agent for the seller, which affects the risk of forfeiture. Contracts must address value added tax (VAT) and the transfer of risk and insurance responsibility. Exchange of contracts is effected by solicitors under authority once all conditions are satisfied. Completion requires execution of a transfer deed and pre‑completion searches (such as OS1 priority search). Post‑completion tasks include paying stamp duty land tax (SDLT) and registering the disposition. If completion is delayed, remedies include common‑law damages, contractual compensation, service of a notice to complete and rescission.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="prop3"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('prop-par3')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: After exchange of contracts, the buyer’s solicitor must carry out an OS1 or K15 priority search and ensure payment of SDLT and registration after completion.</span>
+        <label><input type="radio" name="prop-tf3" value="true"> True</label>
+        <label><input type="radio" name="prop-tf3" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('prop-tf3','true')">Check</button>
+        <div class="feedback" id="prop-tf3-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 4 -->
+    <div class="topic-section" id="prop-sec4">
+      <h3>Leasehold Real Estate Law and Practice</h3>
+      <p id="prop-par4">Commercial leases set out obligations relating to repair, insurance, alterations, user and planning, rent review, and alienation (assignment and sub‑letting). The grant of a new lease or underlease involves drafting an agreement for lease, investigating title, making searches and enquiries, executing the lease and completing registration. Assignments of leases require the landlord’s consent if covenanted and may involve an authorised guarantee agreement. Licences to assign or underlet clarify privity of contract and contain key provisions to protect the landlord. Breaches of leasehold covenants can lead to action in debt, forfeiture, commercial rent arrears recovery, specific performance, damages or self‑help. Termination may occur by effluxion of time, surrender or merger. Business tenants may have statutory security of tenure under Part II of the Landlord and Tenant Act 1954, entitling them to a renewal lease unless the landlord establishes grounds of opposition; sections 24 to 28 of that Act govern notice and renewal procedures.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="prop4"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('prop-par4')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: A tenant with security of tenure under the Landlord and Tenant Act 1954 must be offered a new lease unless the landlord proves statutory grounds for opposition.</span>
+        <label><input type="radio" name="prop-tf4" value="true"> True</label>
+        <label><input type="radio" name="prop-tf4" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('prop-tf4','true')">Check</button>
+        <div class="feedback" id="prop-tf4-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 5 -->
+    <div class="topic-section" id="prop-sec5">
+      <h3>Planning Law</h3>
+      <p id="prop-par5">Under the Town and Country Planning Act 1990, planning permission is required for any “development”, which includes building, engineering, mining or other operations in, on, over or under land and material changes of use. Local planning authorities decide planning applications after consulting neighbours and statutory bodies. National and local planning policies guide decisions. Some minor works benefit from “permitted development” rights and do not require express permission. Developers may be required to enter into planning agreements under section 106 of the Act to mitigate impacts, such as contributions to infrastructure. Enforcement powers enable authorities to remedy unauthorised development.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="prop5"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('prop-par5')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Planning permission is generally required for material changes of use or building operations, unless permitted development rights apply.</span>
+        <label><input type="radio" name="prop-tf5" value="true"> True</label>
+        <label><input type="radio" name="prop-tf5" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('prop-tf5','true')">Check</button>
+        <div class="feedback" id="prop-tf5-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 6 -->
+    <div class="topic-section" id="prop-sec6">
+      <h3>Property Taxation</h3>
+      <p id="prop-par6">Property transactions attract several taxes. In England, residential purchases are subject to Stamp Duty Land Tax (SDLT), while in Wales an equivalent Land Transaction Tax applies. The tax is calculated on the consideration paid and varies depending on whether the property is residential or non‑residential and on the purchaser’s circumstances. Value Added Tax (VAT) is chargeable on supplies of goods and services; most residential property is exempt but commercial property is often taxable unless an option to tax is made by the owner. Capital Gains Tax is payable on gains arising on the disposal of chargeable assets; individuals may qualify for Private Residence Relief on the disposal of their main home.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="prop6"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('prop-par6')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Residential property transactions may attract SDLT or Land Transaction Tax, while gains from disposals of main residences are generally exempt from Capital Gains Tax.</span>
+        <label><input type="radio" name="prop-tf6" value="true"> True</label>
+        <label><input type="radio" name="prop-tf6" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('prop-tf6','true')">Check</button>
+        <div class="feedback" id="prop-tf6-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 7 -->
+    <div class="topic-section" id="prop-sec7">
+      <h3>Planning Enforcement and Building Regulations</h3>
+      <p id="prop-par7">Local planning authorities have enforcement powers to deal with unauthorised development. Time limits apply to enforcement: generally four years for operational development and ten years for changes of use. Building regulations control the safety and energy efficiency of construction; compliance is required alongside planning permission. Failure to obtain approval can lead to enforcement notices and penalties.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="prop7"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('prop-par7')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Local authorities can enforce against unauthorised development, and building works must comply with building regulations in addition to planning law.</span>
+        <label><input type="radio" name="prop-tf7" value="true"> True</label>
+        <label><input type="radio" name="prop-tf7" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('prop-tf7','true')">Check</button>
+        <div class="feedback" id="prop-tf7-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 8 -->
+    <div class="topic-section" id="prop-sec8">
+      <h3>Licences, Options and Break Clauses</h3>
+      <p id="prop-par8">Commercial leases often incorporate options for renewal or break clauses giving one or both parties the right to end the term early. Licences, such as licences to occupy or licences to assign, confer personal rights and do not create proprietary interests. Options to purchase or pre‑emption rights may be granted, the enforceability of which depends on proper registration where the land is registered. Break clauses must be exercised strictly in accordance with their terms.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="prop8"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('prop-par8')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: A break clause must be exercised strictly in accordance with its terms, and a licence to occupy confers only personal rights rather than a proprietary interest.</span>
+        <label><input type="radio" name="prop-tf8" value="true"> True</label>
+        <label><input type="radio" name="prop-tf8" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('prop-tf8','true')">Check</button>
+        <div class="feedback" id="prop-tf8-feedback"></div>
+      </div>
+    </div>
+    <p><strong>References:</strong> Some of the above statements summarise statute and case law. For an overview of lease renewal under the Landlord and Tenant Act 1954, see commentary on sections 24–28. Planning law principles concerning development and permission are explained in leading planning law guides, including the role of local planning authorities. Permitted development rights and section 106 agreements are discussed in planning law guidance and legal textbooks.</p>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>

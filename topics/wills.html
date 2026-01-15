@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wills &amp; Administration of Estates</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body onload="initCheckboxes('wills')">
+  <header>
+    <h1>Wills &amp; Administration of Estates</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../quiz.html">Practice Exam</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h2>Core Knowledge Areas</h2>
+    <!-- Paragraph 1 -->
+    <div class="topic-section" id="wills-sec1">
+      <h3>Validity of Wills and Codicils</h3>
+      <p id="wills-par1">For a will or codicil to be valid, the testator must have testamentary capacity, understanding the nature of making a will and the property involved. The will must be made free from duress or undue influence. Formal requirements of the Wills Act 1837 include writing, signature by the testator (or someone in their presence and by their direction) and attestation by two witnesses present at the same time. Codicils, which amend or add to a will, must meet the same formalities.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="wills1"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('wills-par1')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: A valid will requires the testator to have testamentary capacity and the signature of two witnesses present at the same time.</span>
+        <label><input type="radio" name="wills-tf1" value="true"> True</label>
+        <label><input type="radio" name="wills-tf1" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('wills-tf1','true')">Check</button>
+        <div class="feedback" id="wills-tf1-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 2 -->
+    <div class="topic-section" id="wills-sec2">
+      <h3>Personal Representatives</h3>
+      <p id="wills-par2">Executors are appointed by the will to administer the estate. They may renounce the office or reserve power to apply later. If no executor is appointed or they cannot act, an administrator is appointed under the Non‑Contentious Probate Rules 1987 according to a statutory order of priority. Personal representatives collect and realise assets, pay debts and distribute the estate according to the will or intestacy rules.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="wills2"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('wills-par2')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: An executor named in a will may renounce the role, leaving administration to an alternative personal representative.</span>
+        <label><input type="radio" name="wills-tf2" value="true"> True</label>
+        <label><input type="radio" name="wills-tf2" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('wills-tf2','true')">Check</button>
+        <div class="feedback" id="wills-tf2-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 3 -->
+    <div class="topic-section" id="wills-sec3">
+      <h3>Alterations and Revocation</h3>
+      <p id="wills-par3">Alterations made before execution must be authenticated by the testator and witnesses; alterations after execution are ineffective unless executed as a new will or codicil. Revocation of a will may occur by a later will or codicil, deliberate destruction with intent to revoke, marriage (which automatically revokes a will unless made in contemplation of marriage) or, in limited circumstances, by operation of law on divorce which treats the former spouse as if they had died for succession purposes.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="wills3"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('wills-par3')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Marriage generally revokes a prior will unless the will was made in contemplation of that marriage.</span>
+        <label><input type="radio" name="wills-tf3" value="true"> True</label>
+        <label><input type="radio" name="wills-tf3" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('wills-tf3','true')">Check</button>
+        <div class="feedback" id="wills-tf3-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 4 -->
+    <div class="topic-section" id="wills-sec4">
+      <h3>Interpretation of Wills and Gifts</h3>
+      <p id="wills-par4">Wills contain different types of gifts: specific gifts, general gifts, demonstrative gifts and residuary gifts. The failure of a gift (for example if the subject matter no longer exists) may cause the gift to lapse and fall into residue. Some property passes outside the estate, such as assets held jointly (passing by survivorship), nomination benefits under pension schemes and trust property. Where a will is unclear, the courts apply rules of construction to determine the testator’s intention.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="wills4"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('wills-par4')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Property held jointly passes automatically by survivorship and does not form part of the deceased’s estate.</span>
+        <label><input type="radio" name="wills-tf4" value="true"> True</label>
+        <label><input type="radio" name="wills-tf4" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('wills-tf4','true')">Check</button>
+        <div class="feedback" id="wills-tf4-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 5 -->
+    <div class="topic-section" id="wills-sec5">
+      <h3>Intestacy Rules</h3>
+      <p id="wills-par5">If a person dies without a valid will, their estate is distributed according to the order of priority in section 46 of the Administration of Estates Act 1925, as amended. If there is a surviving spouse and no children, the spouse takes the entire estate. Where there is a surviving spouse and children, the spouse takes personal chattels and a fixed statutory legacy and the residue is divided equally between the spouse and the children. A 28‑day survivorship period applies for a spouse. If there is no surviving spouse, the estate passes to children or, if none, to parents, siblings and remoter relatives in a prescribed order. The statutory trusts apply to the shares of minor beneficiaries.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="wills5"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('wills-par5')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Under the intestacy rules a surviving spouse receives the entire residuary estate where there are no children, but where there are children the spouse receives a statutory legacy and shares the residue with them.</span>
+        <label><input type="radio" name="wills-tf5" value="true"> True</label>
+        <label><input type="radio" name="wills-tf5" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('wills-tf5','true')">Check</button>
+        <div class="feedback" id="wills-tf5-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 6 -->
+    <div class="topic-section" id="wills-sec6">
+      <h3>Grants of Representation and Administration</h3>
+      <p id="wills-par6">Most estates require a grant of representation: probate (where there is a valid will) or letters of administration (where there is no will). Personal representatives must value the estate, account for assets and liabilities and complete inheritance tax (IHT) returns. Excepted estates may not require a full IHT account. Where IHT is payable, the initial instalment must be funded before the grant issues. During administration, the personal representatives have duties to collect assets, pay funeral expenses, debts, taxes and legacies, and distribute the net estate. They owe fiduciary duties and can be personally liable for breaches but may protect themselves by advertising for creditors under section 27 of the Trustee Act 1925.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="wills6"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('wills-par6')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Personal representatives must settle debts and taxes before distributing an estate and may incur personal liability for breach of duty.</span>
+        <label><input type="radio" name="wills-tf6" value="true"> True</label>
+        <label><input type="radio" name="wills-tf6" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('wills-tf6','true')">Check</button>
+        <div class="feedback" id="wills-tf6-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 7 -->
+    <div class="topic-section" id="wills-sec7">
+      <h3>Inheritance (Provision for Family and Dependants) Act 1975</h3>
+      <p id="wills-par7">The Inheritance (Provision for Family and Dependants) Act 1975 allows certain categories of claimants, including spouses, former spouses who have not remarried, cohabitants, children and dependants, to apply to court for reasonable financial provision from the estate of a deceased person. Claims must be issued within six months from the date of the grant of representation. The court will consider the applicant’s needs and the size and nature of the estate when determining whether and to what extent to vary the distribution.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="wills7"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('wills-par7')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Under the 1975 Act a claim for reasonable financial provision must be made within six months of the grant of representation.</span>
+        <label><input type="radio" name="wills-tf7" value="true"> True</label>
+        <label><input type="radio" name="wills-tf7" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('wills-tf7','true')">Check</button>
+        <div class="feedback" id="wills-tf7-feedback"></div>
+      </div>
+    </div>
+    <!-- Paragraph 8 -->
+    <div class="topic-section" id="wills-sec8">
+      <h3>Taxation of Estates</h3>
+      <p id="wills-par8">Inheritance Tax (IHT) may be charged on lifetime transfers (chargeable lifetime transfers) and on transfers on death. Transfers between spouses or civil partners are generally exempt and there are reliefs such as the nil‑rate band and residence nil‑rate band. Lifetime gifts made more than seven years before death are potentially exempt transfers and escape IHT. Anti‑avoidance provisions prevent the use of certain trusts to avoid tax. During administration, personal representatives may be liable for income tax and capital gains tax on estate income and gains. Beneficiaries acquiring assets may also incur capital gains tax on future disposals.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="wills8"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('wills-par8')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Lifetime gifts that survive the donor by seven years are generally exempt from Inheritance Tax.</span>
+        <label><input type="radio" name="wills-tf8" value="true"> True</label>
+        <label><input type="radio" name="wills-tf8" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('wills-tf8','true')">Check</button>
+        <div class="feedback" id="wills-tf8-feedback"></div>
+      </div>
+    </div>
+    <p><strong>References:</strong> The intestacy rules and order of priority are summarised from authoritative explanations of intestacy law in England and Wales.</p>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>

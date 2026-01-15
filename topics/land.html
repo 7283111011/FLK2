@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Land Law</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body onload="initCheckboxes('land')">
+  <header>
+    <h1>Land Law</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../quiz.html">Practice Exam</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h2>Core Topics in Land Law</h2>
+    <!-- Section 1: Nature of Land -->
+    <div class="topic-section" id="land-sec1">
+      <h3>Nature of Land and Estates</h3>
+      <p id="land-par1">English land law distinguishes between real property (land and interests in land) and personal property. Legal estates are limited to two kinds: freehold estates in fee simple absolute in possession and leasehold estates (terms of years absolute). A valid transfer of a legal estate must be made by deed complying with section 52 of the Law of Property Act 1925, while equitable interests may arise under trusts or contracts. Conveyances of land must also comply with registration requirements under the Land Registration Act 2002 or, for unregistered land, with the doctrines of deeds and the doctrine of notice.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="land1"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('land-par1')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Only freehold and leasehold estates can exist as legal estates in land and transfers of legal title must be made by deed.</span>
+        <label><input type="radio" name="land-tf1" value="true"> True</label>
+        <label><input type="radio" name="land-tf1" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('land-tf1','true')">Check</button>
+        <div class="feedback" id="land-tf1-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 2: Title to Land -->
+    <div class="topic-section" id="land-sec2">
+      <h3>Title to Land and Registration</h3>
+      <p id="land-par2">The Land Registration Act 2002 introduced a system of title registration whereby ownership and many interests in land must be recorded on the register. Freehold estates and leaseholds of more than seven years are registrable. Overriding interests, such as legal easements and some leases, bind a purchaser of registered land even though they do not appear on the register; the 2002 Act aims to reduce such interests and lists those that override first registration and subsequent dispositions separately. Unregistered land continues to be governed by title deeds, land charges and the doctrine of notice; equitable interests must be protected by registration as land charges to bind purchasers.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="land2"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('land-par2')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Overriding interests may bind a registered title even if they are not entered on the register, though the Land Registration Act 2002 restricts the categories of such interests.</span>
+        <label><input type="radio" name="land-tf2" value="true"> True</label>
+        <label><input type="radio" name="land-tf2" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('land-tf2','true')">Check</button>
+        <div class="feedback" id="land-tf2-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 3: Co‑ownership -->
+    <div class="topic-section" id="land-sec3">
+      <h3>Co‑ownership and Trusts of Land</h3>
+      <p id="land-par3">Where more than one person owns land, they do so as joint tenants or tenants in common. A joint tenancy is characterised by the four unities (possession, interest, title and time); each co‑owner is entitled to the whole and the right of survivorship operates so that on death their share automatically passes to the others. By statute, legal co‑ownership must be a joint tenancy, but the beneficial interest may be held as a joint tenancy or as a tenancy in common in shares. A tenancy in common gives each co‑owner a distinct share without the right of survivorship. Joint tenants may sever the tenancy to become tenants in common, for example by serving a notice of severance under section 36(2) of the Law of Property Act 1925. Disputes between co‑owners as to sale or occupation may be determined under sections 14–15 of the Trusts of Land and Appointment of Trustees Act 1996.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="land3"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('land-par3')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: In a joint tenancy each co‑owner is treated as entitled to the whole land and the right of survivorship applies, whereas in a tenancy in common each owns a distinct share without survivorship.</span>
+        <label><input type="radio" name="land-tf3" value="true"> True</label>
+        <label><input type="radio" name="land-tf3" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('land-tf3','true')">Check</button>
+        <div class="feedback" id="land-tf3-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 4: Proprietary Rights -->
+    <div class="topic-section" id="land-sec4">
+      <h3>Proprietary Rights: Easements, Covenants and Mortgages</h3>
+      <p id="land-par4">Certain non‑possessory rights in land are termed proprietary rights. Easements are rights enjoyed by one landowner over another’s land; to be valid, an easement requires a dominant and servient tenement, the right must accommodate the dominant land, the owners must be different and the right must be capable of forming the subject matter of a grant. Freehold covenants are promises relating to the use of land; the benefit and burden of positive and restrictive covenants may pass to successors in title under common law and equity, subject to rules such as the requirement of intention to benefit and the doctrine in Tulk v Moxhay. Mortgages are security interests over land: the lender takes a legal charge and has powers to sell or possess the property upon default, but owes duties to act in good faith and to obtain a proper price. The priority of mortgages is determined by order of registration; mortgagors have an equitable right to redeem.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="land4"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('land-par4')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: An easement requires a dominant and servient tenement and must accommodate the dominant land, and the priority of mortgages is determined by the order in which they are registered.</span>
+        <label><input type="radio" name="land-tf4" value="true"> True</label>
+        <label><input type="radio" name="land-tf4" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('land-tf4','true')">Check</button>
+        <div class="feedback" id="land-tf4-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 5: Leases and Licences -->
+    <div class="topic-section" id="land-sec5">
+      <h3>Leases, Licences and Remedies</h3>
+      <p id="land-par5">A lease (tenancy) grants exclusive possession of land for a term at a rent, creating a legal estate. In contrast, a licence merely permits occupation without conferring proprietary rights. The relationship between landlord and tenant is underpinned by privity of contract and privity of estate; covenants in the lease bind successors depending on whether they touch and concern the land. Remedies for breach of covenants include forfeiture (by peaceable re‑entry or court order), action for rent arrears, specific performance and damages, but the landlord must comply with procedural requirements such as serving a section 146 notice. Leases may be terminated by effluxion of time, surrender (express or implied) or merger when the same person acquires the reversion and the leasehold. Break clauses in leases must be exercised strictly in accordance with their terms.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="land5"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('land-par5')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: A lease confers exclusive possession for a term and may be forfeited for breach of covenant, whereas a licence merely grants permission to occupy without a proprietary estate.</span>
+        <label><input type="radio" name="land-tf5" value="true"> True</label>
+        <label><input type="radio" name="land-tf5" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('land-tf5','true')">Check</button>
+        <div class="feedback" id="land-tf5-feedback"></div>
+      </div>
+    </div>
+    <!-- Section 6: Security of Tenure -->
+    <div class="topic-section" id="land-sec6">
+      <h3>Business Tenancies and Security of Tenure</h3>
+      <p id="land-par6">Business tenants occupying premises for the purposes of a business enjoy statutory security of tenure under Part II of the Landlord and Tenant Act 1954. Section 24 provides that a business tenancy will not end automatically at expiry but will continue until terminated in accordance with the Act; section 25 enables the landlord to serve notice to terminate or offer a new tenancy, and section 26 allows the tenant to request a new tenancy. The court may grant a new tenancy for a term not exceeding 15 years on terms it considers just if the parties cannot agree. The landlord may oppose renewal on specific grounds such as own occupation or redevelopment, and compensation may be payable if certain grounds are proved.</p>
+      <div class="controls">
+        <input type="checkbox" data-id="land6"> Mark as read
+        <button class="speak-btn" onclick="speakParagraph('land-par6')">Read aloud</button>
+      </div>
+      <div class="true-false">
+        <span>True or False: Under the Landlord and Tenant Act 1954 business tenants are entitled to request a new tenancy, and if terms cannot be agreed the court may grant a new tenancy for a term of up to 15 years.</span>
+        <label><input type="radio" name="land-tf6" value="true"> True</label>
+        <label><input type="radio" name="land-tf6" value="false"> False</label>
+        <button class="speak-btn" onclick="handleTrueFalse('land-tf6','true')">Check</button>
+        <div class="feedback" id="land-tf6-feedback"></div>
+      </div>
+    </div>
+    <p><strong>References:</strong> The above summary draws on HM Land Registry guidance on overriding interests and legal commentary explaining that legal co‑ownership must be a joint tenancy but beneficial interests may be joint or tenancies in common with survivorship applying only to joint tenants. The description of business tenants’ security of tenure refers to sections 24–28 of the Landlord and Tenant Act 1954.</p>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>
