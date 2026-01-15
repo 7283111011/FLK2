@@ -6,6 +6,7 @@
 */
 
 (function () {
+  console.log("quizOverride.js loaded");
   if (!window.quizData || !Array.isArray(window.quizData)) return;
 
   let currentIndex = 0;
