@@ -5,9 +5,67 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Practice Exam</title>
+
   <link rel="stylesheet" href="style.css">
+
+  <!-- Minimal fallback styles to ensure layout is correct even if style.css changes -->
+  <style>
+    .container { max-width: 980px; margin: 0 auto; padding: 16px; }
+    .quiz-topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .quiz-stats { font-weight: 800; }
+    .quiz-timer { font-weight: 800; text-align: right; min-width: 90px; }
+
+    .quiz-navigation { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
+    .nav-question {
+      width: 42px; height: 42px; border-radius: 9999px;
+      display: inline-flex; align-items: center; justify-content: center;
+      line-height: 1; font-weight: 800;
+      border: 1px solid rgba(0,0,0,0.15);
+      background: white;
+      cursor: pointer;
+      user-select: none;
+    }
+    .nav-current { outline: 3px solid rgba(0,0,0,0.2); }
+    .nav-flagged { border-color: rgba(245, 158, 11, 0.8); }
+    .nav-correct { border-color: rgba(16, 185, 129, 0.8); }
+    .nav-incorrect { border-color: rgba(239, 68, 68, 0.8); }
+
+    .quiz-question { font-size: 1.05rem; font-weight: 800; margin: 8px 0 10px; }
+    .quiz-options { margin-top: 10px; }
+
+    .quiz-option {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 12px;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    .quiz-option input { margin-top: 3px; }
+    .quiz-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+
+    .btn-primary, .btn-secondary {
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 800;
+      border: 1px solid rgba(0,0,0,0.15);
+      cursor: pointer;
+    }
+    .btn-primary { background: #111827; color: white; border-color: #111827; }
+    .btn-secondary { background: #e5e7eb; color: #111827; }
+    .btn-primary:disabled, .btn-secondary:disabled { opacity: 0.55; cursor: not-allowed; }
+
+    .quiz-score {
+      margin-top: 12px;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.12);
+      min-height: 44px;
+      white-space: pre-wrap;
+    }
+  </style>
 </head>
-  <!-- Call loadQuiz() on page load; quizData is already loaded via quizData.js -->
+
 <body>
   <header>
     <h1>Practice Exam</h1>
@@ -15,33 +73,32 @@
       <a href="index.html">Home</a>
     </nav>
   </header>
+
   <div class="container">
     <div class="quiz-topbar">
-  <div id="quiz-stats" class="quiz-stats"></div>
-  <div id="quiz-timer" class="quiz-timer"></div>
-</div>
-    <!-- Navigation panel -->
+      <div id="quiz-stats" class="quiz-stats">Score: 0%</div>
+      <div id="quiz-timer" class="quiz-timer">00:00</div>
+    </div>
+
     <div id="quiz-navigation" class="quiz-navigation"></div>
+
     <div class="quiz-container">
       <div id="quiz-question" class="quiz-question"></div>
       <div id="quiz-options" class="quiz-options"></div>
-<div class="quiz-actions">
-  <button id="flag-btn" type="button" class="btn-secondary" onclick="flagQuestion()">Flag for Review</button>
 
-  <button id="select-btn" type="button" class="btn-primary" onclick="selectAnswer()" disabled>Select</button>
-
-  <button id="next-btn" type="button" class="btn-primary" onclick="nextQuestion()" disabled>Next</button>
-
-  <button type="button" class="btn-secondary" onclick="restartQuiz()">Restart</button>
-</div>
+      <div class="quiz-actions">
+        <button id="flag-btn" type="button" class="btn-secondary">Flag for Review</button>
+        <button id="select-btn" type="button" class="btn-primary" disabled>Select</button>
+        <button id="next-btn" type="button" class="btn-primary" disabled>Next</button>
+        <button id="restart-btn" type="button" class="btn-secondary">Restart</button>
+      </div>
 
       <div id="quiz-score" class="quiz-score"></div>
     </div>
   </div>
-  <!-- Load the quiz data before the main script -->
-<script src="quizData.js"></script>
-<script src="script.js"></script>
-<script src="quizOverride.js?v=8"></script>
-<script>window.addEventListener("load", function () { if (typeof loadQuiz === "function") { loadQuiz(); } });</script>
+
+  <!-- Load data, then initialize the quiz -->
+  <script src="quizOverride.js?v=1"></script>
+  <script src="quizData.js?v=1"></script>
 </body>
 </html>
