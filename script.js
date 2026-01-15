@@ -588,3 +588,98 @@ function updateDashboardProgress() {
     if (label) label.textContent = `${pct}% complete`;
   });
 }
+/* =========================
+   PROGRESS + CHECKBOX STATE
+   ========================= */
+
+/**
+ * Stores and restores checkbox completion for a topic page.
+ * Expects checkboxes: input[type="checkbox"][data-id]
+ * Saves to localStorage: progress_<pageKey>
+ * Format: { completed: number, checkedIds: string[] }
+ */
+function initCheckboxes(pageKey) {
+  const checkboxes = Array.from(document.querySelectorAll('input[type="checkbox"][data-id]'));
+  const storageKey = `progress_${pageKey}`;
+
+  // Load saved state
+  let checkedIds = [];
+  try {
+    const raw = localStorage.getItem(storageKey);
+    if (raw) {
+      const obj = JSON.parse(raw);
+      if (obj && Array.isArray(obj.checkedIds)) {
+        checkedIds = obj.checkedIds;
+      }
+    }
+  } catch (e) {
+    checkedIds = [];
+  }
+
+  // Apply saved state to checkboxes
+  checkboxes.forEach((cb) => {
+    const id = cb.getAttribute("data-id");
+    cb.checked = checkedIds.includes(id);
+  });
+
+  // Persist whenever a checkbox changes
+  function persist() {
+    const nowChecked = checkboxes
+      .filter((cb) => cb.checked)
+      .map((cb) => cb.getAttribute("data-id"));
+
+    const payload = {
+      completed: nowChecked.length,
+      checkedIds: nowChecked
+    };
+
+    localStorage.setItem(storageKey, JSON.stringify(payload));
+
+    // If the user navigates back to index, it will update on load,
+    // but this allows immediate updates if you ever embed dashboard UI elsewhere.
+    if (typeof updateDashboardProgress === "function") {
+      updateDashboardProgress();
+    }
+  }
+
+  // Attach listeners
+  checkboxes.forEach((cb) => {
+    cb.addEventListener("change", persist);
+  });
+
+  // Persist once on load to keep "completed" consistent
+  persist();
+}
+
+/**
+ * Updates dashboard cards on index.html.
+ * Expects cards: .card[data-page][data-total]
+ * Expects progress data: localStorage key progress_<data-page> with {completed: number}
+ */
+function updateDashboardProgress() {
+  const cards = document.querySelectorAll(".card[data-page][data-total]");
+
+  cards.forEach((card) => {
+    const pageKey = card.getAttribute("data-page");
+    const total = Number(card.getAttribute("data-total") || 0);
+
+    let completed = 0;
+    try {
+      const raw = localStorage.getItem(`progress_${pageKey}`);
+      if (raw) {
+        const obj = JSON.parse(raw);
+        completed = Number(obj && obj.completed ? obj.completed : 0);
+      }
+    } catch (e) {
+      completed = 0;
+    }
+
+    const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+    const fill = card.querySelector(".progress-bar span");
+    const label = card.querySelector(".percentage");
+
+    if (fill) fill.style.width = `${pct}%`;
+    if (label) label.textContent = `${pct}% complete`;
+  });
+}
