@@ -1,8 +1,8 @@
 /* quizOverride.js
-   Two button quiz flow:
-   1) Pick option -> Select button enabled
-   2) Click Select -> feedback shown and remains, Next enabled
-   3) Click Next -> advance to next question
+   Two-button flow:
+   - Choose an option -> enables Select
+   - Click Select -> shows feedback and enables Next
+   - Click Next -> moves to the next question
 */
 
 (function () {
@@ -82,9 +82,7 @@
 
       if (idx === currentIndex) btn.classList.add("nav-current");
       if (flaggedByIndex[idx]) btn.classList.add("nav-flagged");
-      if (answeredByIndex[idx]) {
-        btn.classList.add(correctByIndex[idx] ? "nav-correct" : "nav-incorrect");
-      }
+      if (answeredByIndex[idx]) btn.classList.add(correctByIndex[idx] ? "nav-correct" : "nav-incorrect");
 
       btn.addEventListener("click", () => {
         currentIndex = idx;
@@ -102,51 +100,43 @@
     const alreadyAnswered = !!answeredByIndex[currentIndex];
     const hasSelection = !!selectedByIndex[currentIndex];
 
-    if (selectBtn) {
-      // Select is available only if not answered yet and user has selected something
-      selectBtn.disabled = alreadyAnswered || !hasSelection;
-      selectBtn.textContent = "Select";
-    }
+    // Select enabled only when there is a choice and question not yet answered
+    if (selectBtn) selectBtn.disabled = alreadyAnswered || !hasSelection;
 
+    // Next enabled only after Select has been used (question answered)
     if (nextBtn) {
-      // Next is available only after the question has been answered (Select clicked)
       nextBtn.disabled = !alreadyAnswered;
       nextBtn.textContent = (currentIndex < window.quizData.length - 1) ? "Next" : "Finish";
     }
   }
 
   function lockOptions() {
-    const optionInputs = document.querySelectorAll('input[name="quiz-answer"]');
-    optionInputs.forEach((i) => (i.disabled = true));
+    const inputs = document.querySelectorAll('input[name="quiz-answer"]');
+    inputs.forEach((i) => (i.disabled = true));
   }
 
   function renderQuestion() {
     startTimerOnce();
 
     const q = window.quizData[currentIndex];
+
     const qEl = $("quiz-question");
     const oEl = $("quiz-options");
     const feedbackEl = $("quiz-score");
     const flagBtn = $("flag-btn");
 
     if (qEl) qEl.textContent = `${q.number}. ${q.question}`;
-
-    // Rebuild options every time
     if (oEl) oEl.innerHTML = "";
+
+    // Clear feedback only when rendering a question fresh
+    if (feedbackEl) feedbackEl.textContent = "";
+
+    if (flagBtn) flagBtn.textContent = flaggedByIndex[currentIndex] ? "Unflag" : "Flag for Review";
 
     const alreadyAnswered = !!answeredByIndex[currentIndex];
     const previouslySelected = selectedByIndex[currentIndex] || null;
 
-    // Important: only clear feedback when moving to a different question render
-    if (feedbackEl) feedbackEl.textContent = "";
-
-    // Update flag button label
-    if (flagBtn) {
-      flagBtn.textContent = flaggedByIndex[currentIndex] ? "Unflag" : "Flag for Review";
-    }
-
-    const optionEntries = Object.entries(q.options || {});
-    optionEntries.forEach(([letter, text]) => {
+    Object.entries(q.options || {}).forEach(([letter, text]) => {
       const id = `q_${currentIndex}_${letter}`;
 
       const label = document.createElement("label");
@@ -164,36 +154,25 @@
       const span = document.createElement("span");
       span.textContent = `${letter}. ${text}`;
 
-input.addEventListener("change", () => {
-  if (answeredByIndex[currentIndex]) return;
+      input.addEventListener("change", () => {
+        if (answeredByIndex[currentIndex]) return;
+        selectedByIndex[currentIndex] = letter;
+        setButtonStates(); // this enables Select
+      });
 
-  selectedByIndex[currentIndex] = letter;
-
-  const selectBtn = document.getElementById("select-btn");
-  if (selectBtn) selectBtn.disabled = false;
-
-  // Keep Next disabled until Select is clicked
-  const nextBtn = document.getElementById("next-btn");
-  if (nextBtn) nextBtn.disabled = true;
-});
-
-       label.appendChild(input);
+      label.appendChild(input);
       label.appendChild(span);
-
       if (oEl) oEl.appendChild(label);
     });
 
-    // If already answered, show feedback immediately and lock options
-    if (alreadyAnswered) {
+    // If already answered (user navigated back), show feedback and lock options
+    if (alreadyAnswered && feedbackEl) {
       lockOptions();
-
       const isCorrect = !!correctByIndex[currentIndex];
       const explanation = q.explanation ? ` ${q.explanation}` : "";
-      if (feedbackEl) {
-        feedbackEl.textContent = isCorrect
-          ? `Correct.${explanation}`
-          : `Incorrect. Correct answer: ${q.answer}.${explanation}`;
-      }
+      feedbackEl.textContent = isCorrect
+        ? `Correct.${explanation}`
+        : `Incorrect. Correct answer: ${q.answer}.${explanation}`;
     }
 
     renderStats();
@@ -201,7 +180,7 @@ input.addEventListener("change", () => {
     setButtonStates();
   }
 
-  // NEW: separate Select button handler
+  // This is what your Select button calls in quiz.html
   window.selectAnswer = function () {
     const q = window.quizData[currentIndex];
     const feedbackEl = $("quiz-score");
@@ -215,12 +194,11 @@ input.addEventListener("change", () => {
     }
 
     answeredByIndex[currentIndex] = true;
-    const isCorrect = selected === q.answer;
-    correctByIndex[currentIndex] = isCorrect;
+    correctByIndex[currentIndex] = (selected === q.answer);
 
     const explanation = q.explanation ? ` ${q.explanation}` : "";
     if (feedbackEl) {
-      feedbackEl.textContent = isCorrect
+      feedbackEl.textContent = correctByIndex[currentIndex]
         ? `Correct.${explanation}`
         : `Incorrect. Correct answer: ${q.answer}.${explanation}`;
     }
@@ -228,10 +206,10 @@ input.addEventListener("change", () => {
     lockOptions();
     renderStats();
     renderNavigation();
-    setButtonStates();
+    setButtonStates(); // this enables Next
   };
 
-  // Next is now only navigation
+  // Next only advances, it does not mark answers
   window.nextQuestion = function () {
     const feedbackEl = $("quiz-score");
     const nextBtn = $("next-btn");
@@ -253,9 +231,7 @@ input.addEventListener("change", () => {
     const total = window.quizData.length;
     const pct = total === 0 ? 0 : Math.round((correct / total) * 100);
 
-    if (feedbackEl) {
-      feedbackEl.textContent = `Finished. Score: ${pct}% (${correct}/${total}).`;
-    }
+    if (feedbackEl) feedbackEl.textContent = `Finished. Score: ${pct}% (${correct}/${total}).`;
     if (nextBtn) {
       nextBtn.disabled = true;
       nextBtn.textContent = "Finished";
@@ -267,9 +243,7 @@ input.addEventListener("change", () => {
     renderNavigation();
 
     const flagBtn = $("flag-btn");
-    if (flagBtn) {
-      flagBtn.textContent = flaggedByIndex[currentIndex] ? "Unflag" : "Flag for Review";
-    }
+    if (flagBtn) flagBtn.textContent = flaggedByIndex[currentIndex] ? "Unflag" : "Flag for Review";
   };
 
   window.restartQuiz = function () {
