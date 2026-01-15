@@ -216,3 +216,91 @@ input[type="checkbox"] {
     gap: 0.75rem;
   }
 }
+/* ===== QUIZ TOP BAR (Score left, Timer right) ===== */
+.quiz-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.quiz-timer {
+  text-align: right;
+  min-width: 90px;
+}
+
+/* Ensure the stats reads as "Score: xx%" */
+.quiz-stats {
+  text-align: left;
+}
+
+/* ===== NAV CIRCLES: center number properly ===== */
+.nav-question {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-weight: 700;
+}
+
+/* ===== BUTTON CLASSES USED IN quiz.html ===== */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1.05rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+  color: #111827;
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1.05rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* ===== QUIZ OPTIONS: nicer formatting ===== */
+
+.quiz-options {
+  margin-top: 0.75rem;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.quiz-option input {
+  margin-top: 3px;
+}
+
+.quiz-score {
+  margin-top: 12px;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
