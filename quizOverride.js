@@ -164,13 +164,20 @@
       const span = document.createElement("span");
       span.textContent = `${letter}. ${text}`;
 
-      input.addEventListener("change", () => {
-        if (answeredByIndex[currentIndex]) return;
-        selectedByIndex[currentIndex] = letter;
-        setButtonStates();
-      });
+input.addEventListener("change", () => {
+  if (answeredByIndex[currentIndex]) return;
 
-      label.appendChild(input);
+  selectedByIndex[currentIndex] = letter;
+
+  const selectBtn = document.getElementById("select-btn");
+  if (selectBtn) selectBtn.disabled = false;
+
+  // Keep Next disabled until Select is clicked
+  const nextBtn = document.getElementById("next-btn");
+  if (nextBtn) nextBtn.disabled = true;
+});
+
+       label.appendChild(input);
       label.appendChild(span);
 
       if (oEl) oEl.appendChild(label);
