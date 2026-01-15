@@ -529,3 +529,32 @@ function stopTimer() {
 function openCalculator() {
     window.open('calculator.html', 'calculator', 'width=300,height=400');
 }
+function updateDashboardProgress() {
+  const cards = document.querySelectorAll(".card[data-page][data-total]");
+
+  cards.forEach((card) => {
+    const pageKey = card.getAttribute("data-page");
+    const total = Number(card.getAttribute("data-total") || 0);
+
+    // Expected storage key: progress_<data-page>
+    // Expected value: JSON like {"completed": 3}
+    let completed = 0;
+    try {
+      const raw = localStorage.getItem(`progress_${pageKey}`);
+      if (raw) {
+        const obj = JSON.parse(raw);
+        completed = Number(obj.completed || 0);
+      }
+    } catch (e) {
+      completed = 0;
+    }
+
+    const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+    const barFill = card.querySelector(".progress-bar span");
+    const pctText = card.querySelector(".percentage");
+
+    if (barFill) barFill.style.width = `${pct}%`;
+    if (pctText) pctText.textContent = `${pct}% complete`;
+  });
+}
