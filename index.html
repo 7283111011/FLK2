@@ -10,11 +10,22 @@
 
 <body onload="updateDashboardProgress()">
   <header>
-    <h1>SQE1 FLK2 Study Portal</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="quiz.html">Practice Exam</a>
-    </nav>
+    <div class="header-left">
+      <a class="brand" href="index.html" aria-label="SQE Friends Home">
+        <img src="SQEfriends_logo.png" alt="SQE Friends logo">
+      </a>
+      <h1>SQE1 FLK2 Study Portal</h1>
+    </div>
+
+    <div class="header-actions">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="quiz.html">Practice Exam</a>
+      </nav>
+      <button type="button" class="btn-reset secondary" onclick="resetLearningProgress()" aria-label="Reset learning progress">
+        Reset progress
+      </button>
+    </div>
   </header>
 
   <div class="container">
@@ -74,5 +85,29 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    function resetLearningProgress() {
+      const confirmed = window.confirm(
+        "This will reset all saved progress for this study portal on this device. Do you want to continue?"
+      );
+      if (!confirmed) {
+        return;
+      }
+
+      try {
+        localStorage.clear();
+      } catch (e) {
+        console.error("Unable to reset local storage", e);
+      }
+
+      if (typeof updateDashboardProgress === "function") {
+        updateDashboardProgress();
+      }
+    }
+
+    if (typeof updateDashboardProgress === "function") {
+      document.addEventListener("DOMContentLoaded", updateDashboardProgress);
+    }
+  </script>
 </body>
 </html>
