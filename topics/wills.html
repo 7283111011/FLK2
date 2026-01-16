@@ -1,152 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wills &amp; Administration of Estates</title>
-  <link rel="stylesheet" href="../style.css">
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Wills &amp; Administration of Estates</title>
+ <link rel="stylesheet" href="../style.css">
 </head>
 <body onload="initCheckboxes('wills')">
-  <header>
-    <h1>Wills &amp; Administration of Estates</h1>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../quiz.html">Practice Exam</a>
-    </nav>
-  </header>
-  <div class="container">
-    <h2>Core Knowledge Areas</h2>
-    <!-- Paragraph 1 -->
-    <div class="topic-section" id="wills-sec1">
-      <h3>Validity of Wills and Codicils</h3>
-      <p id="wills-par1">For a will or codicil to be valid, the testator must have testamentary capacity, understanding the nature of making a will and the property involved. The will must be made free from duress or undue influence. Formal requirements of the Wills Act 1837 include writing, signature by the testator (or someone in their presence and by their direction) and attestation by two witnesses present at the same time. Codicils, which amend or add to a will, must meet the same formalities.</p>
-      <div class="controls">
-        <input type="checkbox" data-id="wills1"> Mark as read
-        <button class="speak-btn" onclick="speakParagraph('wills-par1')">Read aloud</button>
-      </div>
-      <div class="true-false">
-        <span>True or False: A valid will requires the testator to have testamentary capacity and the signature of two witnesses present at the same time.</span>
-        <label><input type="radio" name="wills-tf1" value="true"> True</label>
-        <label><input type="radio" name="wills-tf1" value="false"> False</label>
-        <button class="speak-btn" onclick="handleTrueFalse('wills-tf1','true')">Check</button>
-        <div class="feedback" id="wills-tf1-feedback"></div>
-      </div>
-    </div>
-    <!-- Paragraph 2 -->
-    <div class="topic-section" id="wills-sec2">
-      <h3>Personal Representatives</h3>
-      <p id="wills-par2">Executors are appointed by the will to administer the estate. They may renounce the office or reserve power to apply later. If no executor is appointed or they cannot act, an administrator is appointed under the Non‑Contentious Probate Rules 1987 according to a statutory order of priority. Personal representatives collect and realise assets, pay debts and distribute the estate according to the will or intestacy rules.</p>
-      <div class="controls">
-        <input type="checkbox" data-id="wills2"> Mark as read
-        <button class="speak-btn" onclick="speakParagraph('wills-par2')">Read aloud</button>
-      </div>
-      <div class="true-false">
-        <span>True or False: An executor named in a will may renounce the role, leaving administration to an alternative personal representative.</span>
-        <label><input type="radio" name="wills-tf2" value="true"> True</label>
-        <label><input type="radio" name="wills-tf2" value="false"> False</label>
-        <button class="speak-btn" onclick="handleTrueFalse('wills-tf2','true')">Check</button>
-        <div class="feedback" id="wills-tf2-feedback"></div>
-      </div>
-    </div>
-    <!-- Paragraph 3 -->
-    <div class="topic-section" id="wills-sec3">
-      <h3>Alterations and Revocation</h3>
-      <p id="wills-par3">Alterations made before execution must be authenticated by the testator and witnesses; alterations after execution are ineffective unless executed as a new will or codicil. Revocation of a will may occur by a later will or codicil, deliberate destruction with intent to revoke, marriage (which automatically revokes a will unless made in contemplation of marriage) or, in limited circumstances, by operation of law on divorce which treats the former spouse as if they had died for succession purposes.</p>
-      <div class="controls">
-        <input type="checkbox" data-id="wills3"> Mark as read
-        <button class="speak-btn" onclick="speakParagraph('wills-par3')">Read aloud</button>
-      </div>
-      <div class="true-false">
-        <span>True or False: Marriage generally revokes a prior will unless the will was made in contemplation of that marriage.</span>
-        <label><input type="radio" name="wills-tf3" value="true"> True</label>
-        <label><input type="radio" name="wills-tf3" value="false"> False</label>
-        <button class="speak-btn" onclick="handleTrueFalse('wills-tf3','true')">Check</button>
-        <div class="feedback" id="wills-tf3-feedback"></div>
-      </div>
-    </div>
-    <!-- Paragraph 4 -->
-    <div class="topic-section" id="wills-sec4">
-      <h3>Interpretation of Wills and Gifts</h3>
-      <p id="wills-par4">Wills contain different types of gifts: specific gifts, general gifts, demonstrative gifts and residuary gifts. The failure of a gift (for example if the subject matter no longer exists) may cause the gift to lapse and fall into residue. Some property passes outside the estate, such as assets held jointly (passing by survivorship), nomination benefits under pension schemes and trust property. Where a will is unclear, the courts apply rules of construction to determine the testator’s intention.</p>
-      <div class="controls">
-        <input type="checkbox" data-id="wills4"> Mark as read
-        <button class="speak-btn" onclick="speakParagraph('wills-par4')">Read aloud</button>
-      </div>
-      <div class="true-false">
-        <span>True or False: Property held jointly passes automatically by survivorship and does not form part of the deceased’s estate.</span>
-        <label><input type="radio" name="wills-tf4" value="true"> True</label>
-        <label><input type="radio" name="wills-tf4" value="false"> False</label>
-        <button class="speak-btn" onclick="handleTrueFalse('wills-tf4','true')">Check</button>
-        <div class="feedback" id="wills-tf4-feedback"></div>
-      </div>
-    </div>
-    <!-- Paragraph 5 -->
-    <div class="topic-section" id="wills-sec5">
-      <h3>Intestacy Rules</h3>
-      <p id="wills-par5">If a person dies without a valid will, their estate is distributed according to the order of priority in section 46 of the Administration of Estates Act 1925, as amended. If there is a surviving spouse and no children, the spouse takes the entire estate. Where there is a surviving spouse and children, the spouse takes personal chattels and a fixed statutory legacy and the residue is divided equally between the spouse and the children. A 28‑day survivorship period applies for a spouse. If there is no surviving spouse, the estate passes to children or, if none, to parents, siblings and remoter relatives in a prescribed order. The statutory trusts apply to the shares of minor beneficiaries.</p>
-      <div class="controls">
-        <input type="checkbox" data-id="wills5"> Mark as read
-        <button class="speak-btn" onclick="speakParagraph('wills-par5')">Read aloud</button>
-      </div>
-      <div class="true-false">
-        <span>True or False: Under the intestacy rules a surviving spouse receives the entire residuary estate where there are no children, but where there are children the spouse receives a statutory legacy and shares the residue with them.</span>
-        <label><input type="radio" name="wills-tf5" value="true"> True</label>
-        <label><input type="radio" name="wills-tf5" value="false"> False</label>
-        <button class="speak-btn" onclick="handleTrueFalse('wills-tf5','true')">Check</button>
-        <div class="feedback" id="wills-tf5-feedback"></div>
-      </div>
-    </div>
-    <!-- Paragraph 6 -->
-    <div class="topic-section" id="wills-sec6">
-      <h3>Grants of Representation and Administration</h3>
-      <p id="wills-par6">Most estates require a grant of representation: probate (where there is a valid will) or letters of administration (where there is no will). Personal representatives must value the estate, account for assets and liabilities and complete inheritance tax (IHT) returns. Excepted estates may not require a full IHT account. Where IHT is payable, the initial instalment must be funded before the grant issues. During administration, the personal representatives have duties to collect assets, pay funeral expenses, debts, taxes and legacies, and distribute the net estate. They owe fiduciary duties and can be personally liable for breaches but may protect themselves by advertising for creditors under section 27 of the Trustee Act 1925.</p>
-      <div class="controls">
-        <input type="checkbox" data-id="wills6"> Mark as read
-        <button class="speak-btn" onclick="speakParagraph('wills-par6')">Read aloud</button>
-      </div>
-      <div class="true-false">
-        <span>True or False: Personal representatives must settle debts and taxes before distributing an estate and may incur personal liability for breach of duty.</span>
-        <label><input type="radio" name="wills-tf6" value="true"> True</label>
-        <label><input type="radio" name="wills-tf6" value="false"> False</label>
-        <button class="speak-btn" onclick="handleTrueFalse('wills-tf6','true')">Check</button>
-        <div class="feedback" id="wills-tf6-feedback"></div>
-      </div>
-    </div>
-    <!-- Paragraph 7 -->
-    <div class="topic-section" id="wills-sec7">
-      <h3>Inheritance (Provision for Family and Dependants) Act 1975</h3>
-      <p id="wills-par7">The Inheritance (Provision for Family and Dependants) Act 1975 allows certain categories of claimants, including spouses, former spouses who have not remarried, cohabitants, children and dependants, to apply to court for reasonable financial provision from the estate of a deceased person. Claims must be issued within six months from the date of the grant of representation. The court will consider the applicant’s needs and the size and nature of the estate when determining whether and to what extent to vary the distribution.</p>
-      <div class="controls">
-        <input type="checkbox" data-id="wills7"> Mark as read
-        <button class="speak-btn" onclick="speakParagraph('wills-par7')">Read aloud</button>
-      </div>
-      <div class="true-false">
-        <span>True or False: Under the 1975 Act a claim for reasonable financial provision must be made within six months of the grant of representation.</span>
-        <label><input type="radio" name="wills-tf7" value="true"> True</label>
-        <label><input type="radio" name="wills-tf7" value="false"> False</label>
-        <button class="speak-btn" onclick="handleTrueFalse('wills-tf7','true')">Check</button>
-        <div class="feedback" id="wills-tf7-feedback"></div>
-      </div>
-    </div>
-    <!-- Paragraph 8 -->
-    <div class="topic-section" id="wills-sec8">
-      <h3>Taxation of Estates</h3>
-      <p id="wills-par8">Inheritance Tax (IHT) may be charged on lifetime transfers (chargeable lifetime transfers) and on transfers on death. Transfers between spouses or civil partners are generally exempt and there are reliefs such as the nil‑rate band and residence nil‑rate band. Lifetime gifts made more than seven years before death are potentially exempt transfers and escape IHT. Anti‑avoidance provisions prevent the use of certain trusts to avoid tax. During administration, personal representatives may be liable for income tax and capital gains tax on estate income and gains. Beneficiaries acquiring assets may also incur capital gains tax on future disposals.</p>
-      <div class="controls">
-        <input type="checkbox" data-id="wills8"> Mark as read
-        <button class="speak-btn" onclick="speakParagraph('wills-par8')">Read aloud</button>
-      </div>
-      <div class="true-false">
-        <span>True or False: Lifetime gifts that survive the donor by seven years are generally exempt from Inheritance Tax.</span>
-        <label><input type="radio" name="wills-tf8" value="true"> True</label>
-        <label><input type="radio" name="wills-tf8" value="false"> False</label>
-        <button class="speak-btn" onclick="handleTrueFalse('wills-tf8','true')">Check</button>
-        <div class="feedback" id="wills-tf8-feedback"></div>
-      </div>
-    </div>
-    <p><strong>References:</strong> The intestacy rules and order of priority are summarised from authoritative explanations of intestacy law in England and Wales.</p>
-  </div>
-  <script src="../script.js"></script>
+ <header>
+ <h1>Wills &amp; Administration of Estates</h1>
+ <nav>
+ <a href="../index.html">Home</a>
+ <a href="../quiz.html">Practice Exam</a>
+ </nav>
+ </header>
+ <div class="container">
+ <h2>Core Knowledge Areas</h2>
+ <h2 class="category">Validity of wills and codicils</h2>
+ <div class="topic-section" id="wills-sec1">
+ <h3>Validity of wills and codicils</h3>
+ <p class="subheading"><strong>Testamentary Capacity</strong></p>
+ <p id="wills-par1">Under testamentary capacity, the testator must have a sound mind. In other words, they need to understand that they are actually making a will and they have to grasp what that means. They should also know the nature and the value of their assets basically what property or money they own. And finally, they need to understand who may reasonably expect to benefit from their will, such as family members or other dependents.<br><br><strong>Examination focus:</strong> If you get an examination question on testamentary capacity, one key thing to watch out for is whether the testator understood the nature of making a will and the extent of their assets. In other words, in an examination scenario, you may be asked to consider if the person making the will had the mental capacity to understand what they were doing. You will want to look for clues about whether they knew who their beneficiaries were, what kind of property they were leaving behind, and whether they were free from any delusions that may have affected their decisions. If you see a testamentary capacity question, focus on whether the person understood the will, the value of their estate, and their relationships with the beneficiaries.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills1"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par1')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec2">
+ <h3>Validity of wills and codicils</h3>
+ <p class="subheading"><strong>Duress And Undue Influence</strong></p>
+ <p id="wills-par2">A will may be invalid if it is proven that the testator was under duress or subject to undue influence meaning someone else overpowered their free will and dictated the terms. If there is evidence of coercion or pressure that influenced the testator&#x27;s decisions, the will could be challenged. Essentially, duress and undue influence are factors that can invalidate a will if proven.<br><br><strong>Examination focus:</strong> For a question on duress and undue influence, what you want to focus on is whether the person making the will was pressured or coerced into including certain provisions. In other words, in an examination scenario, you would be looking for signs that someone else exerted undue pressure on the testator, making them include things in the will that they would not have otherwise chosen. you would want to consider whether the testator was acting of their own free will or whether someone else influenced them to benefit themselves. In short, if you see a duress or undue influence question, look for any evidence that the testator&#x27;s freedom to make their own decisions was overridden by someone else.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills2"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par2')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec3">
+ <h3>Validity of wills and codicils</h3>
+ <p class="subheading"><strong>Formal Requirements</strong></p>
+ <p id="wills-par3">The basic legal formalities that a will needs to meet to be valid. Typically, that includes that the will must be in writing, it has to be signed by the testator, and that signing has to be witnessed by at least two witnesses who are present at the same time.<br><br><strong>Examination focus:</strong> For a question on formal requirements, you will want to focus on whether the will has met the necessary legal formalities to be valid. In an examination scenario, look out for whether the will is in writing, whether it is signed by the testator, and whether it is properly witnessed by at least two witnesses who are present at the same time. Essentially, you are checking if all the formal steps were followed to make the will legally valid. If you get a formal requirements question, focus on those key elements: writing, signature, and witnesses.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills3"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par3')">Read aloud</button>
+ </div>
+ </div>
+
+ <h2 class="category">Personal Representative (PRs)</h2>
+ <div class="topic-section" id="wills-sec4">
+ <h3>Personal Representative (PRs)</h3>
+ <p class="subheading"><strong>The Appointment Of Executors</strong></p>
+ <p id="wills-par4">For the appointment of executors, the key point is that the will should clearly identify who&#x27;s going to act as the executor. This is the person responsible for carrying out the terms of the will and handling the estate. The will should name one or more executors to manage and distribute the estate according to the testator&#x27;s wishes.<br><br><strong>Examination focus:</strong> Absolutely, let&#x27;s do that. If you get an examination question about the appointment of executors, what you want to focus on is who has been named in the will to carry out the duties of managing the estate. In an examination scenario, you may be asked whether the executor was validly appointed or if there are any issues with their appointment. For example, you may look at whether the will clearly identifies who the executors are and whether they are willing and able to act. The key point is to ensure that the executor is properly appointed according to the will and that they have the legal authority to administer the estate. If you see a question on that, focus on whether the executor is correctly named and if there are any potential issues with their appointment.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills4"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par4')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec5">
+ <h3>Personal Representative (PRs)</h3>
+ <p class="subheading"><strong>Renunciation And Reservation Of Power</strong></p>
+ <p id="wills-par5">When it comes to renunciation and reservation of power, executors do have the ability to either formally decline their role from the start or to reserve the right to step in and act at a later stage if circumstances require.<br><br><strong>Examination focus:</strong> If you get a question on renunciation and reservation of power, what you want to look out for is whether an executor has chosen not to act. In an examination scenario, you may be asked about the difference between an executor who completely renounces their role, meaning they step away from it entirely, and one who reserves the right to act later if needed. for renunciation, you are focusing on the executor formally giving up their role before they start, and for reservation of power, you are looking at an executor who steps back but may step in later. focus on whether the executor is fully stepping down or postponing their involvement.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills5"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par5')">Read aloud</button>
+ </div>
+ </div>
+
+ <h2 class="category">Alterations and amendments to wills</h2>
+ <div class="topic-section" id="wills-sec6">
+ <h3>Alterations and amendments to wills</h3>
+ <p class="subheading"><strong>Effect Of Alterations Made To Wills Both Before And After Execution</strong></p>
+ <p id="wills-par6">In terms of alterations and amendments to wills, and specifically the effect of changes made before and after the will is executed, here&#x27;s the key point: Any alterations made before the will is signed and witnessed are generally valid as long as they&#x27;re part of the final signed document. On the other hand, if you make changes after the will has already been executed, those changes generally need to be re-executed with the same formalities signed and witnessed again or done through a formal codicil. In summary, changes before execution are incorporated into the final will, but changes after execution require the same formalities to be valid.<br><br><strong>Examination focus:</strong> If you get a question on alterations and amendments to wills, especially about changes made before and after execution, here&#x27;s what to focus on. In an examination scenario, the key point is whether the changes were made before the will was signed and witnessed or after. If the changes were made before execution, they generally become part of the will as long as the will is properly executed afterward. If the changes are made after the will is executed, then you need to consider whether they were made through a valid codicil, which is an amendment that is formally executed, or if they may invalidate the will if they&#x27;re not done correctly. look for whether the changes were made before or after the will was finalized and whether they meet the formal requirements for amendments</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills6"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par6')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec7">
+ <h3>Alterations and amendments to wills</h3>
+ <p class="subheading"><strong>Use Of Codicils</strong></p>
+ <p id="wills-par7">When it comes to the use of codicils, a codicil is basically a legal document that allows someone to make amendments or changes to their existing will without having to rewrite the entire thing. Essentially, it needs to be executed with the same formalities as a will it has to be signed and witnessed like a will would be. in short, a codicil is used to make valid changes or additions to a will, and it has to follow the same signing and witnessing rules to be legally effective.<br><br><strong>Examination focus:</strong> If you get a question about the use of codicils, what you will want to focus on is that a codicil is a formal document used to make an amendment to an existing will without having to rewrite the entire will. In an examination scenario, look out for whether the codicil has been executed with the same formalities as a will meaning it needs to be signed and witnessed like the original will. Essentially, a codicil is a way to update a will without starting from scratch, but it still needs to follow all the same formalities to be valid. If you see a codicil question, focus on the formalities and how the codicil modifies the original will.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills7"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par7')">Read aloud</button>
+ </div>
+ </div>
+
+ <h2 class="category">Revocation of wills</h2>
+ <div class="topic-section" id="wills-sec8">
+ <h3>Revocation of wills</h3>
+ <p class="subheading"><strong>Methods Of Revocation</strong></p>
+ <p id="wills-par8">When we talk about methods of revocation, essentially there are a few main ways a will can be revoked. First, a will can be revoked by creating a new will that explicitly states it revokes the previous one. Second, physical destruction of the will like tearing it up or burning it with the intention to revoke it is another method. And third, certain life events, like marriage, can automatically revoke a will unless the will was made in contemplation of that marriage.<br><br><strong>Examination focus:</strong> If you get a question on revocation of wills and the methods of revocation, what you want to focus on is how a will can be legally revoked. In an examination scenario, you may be asked about the different ways a will can be canceled. The main methods include creating a new will that states it revokes the previous one, physically destroying the will with the intention of revoking it, or a significant life event like marriage, which can automatically revoke a will unless it is made in contemplation of that marriage. If you see a question on revocation, focus on these methods: a new will, physical destruction, or certain life events.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills8"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par8')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec9">
+ <h3>Revocation of wills</h3>
+ <p class="subheading"><strong>Effect Of Marriage And Divorce Of A Testator</strong></p>
+ <p id="wills-par9">When it comes to the effect of marriage and divorce on a will, here are the core points. In many jurisdictions, marriage automatically revokes any previously existing will unless that will was made specifically in contemplation of that marriage. On the other hand, divorce does not automatically revoke the entire will, but it usually cancels any gifts or appointments made to the former spouse. Essentially, after a divorce, the will is read as if the former spouse had died before the testator. marriage can revoke a will unless planned for, and divorce typically removes the ex-spouse from the will&#x27;s provisions.<br><br><strong>Examination focus:</strong> If you get an examination question about the effect of marriage and divorce on a will, here&#x27;s what to keep in mind. When someone gets married, that marriage generally revokes any previous will they made unless the will was made in contemplation of that specific marriage. In other words, marriage can automatically cancel a previous will. On the other hand, divorce does not automatically revoke the entire will, but it does usually mean that any provisions that included the former spouse are canceled. If you see a question on this, remember that marriage can revoke a will, and divorce cancels any gifts to the former spouse.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills9"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par9')">Read aloud</button>
+ </div>
+ </div>
+
+ <h2 class="category">The interpretation of wills</h2>
+ <div class="topic-section" id="wills-sec10">
+ <h3>The interpretation of wills</h3>
+ <p class="subheading"><strong>Effect Of Different Types Of Gift</strong></p>
+ <p id="wills-par10">when it comes to the interpretation of wills and the effect of different types of gifts, the main point is that gifts in a will can be categorized in different ways, and each type has its own implications. For example, a specific gift is when the will leaves a particular item or a specific piece of property to someone. A general gift is more like leaving a sum of money that is not tied to a specific asset. And a residuary gift is whatever is left over after all other gifts and debts have been taken care of. Each of these types of gifts can affect how the will is interpreted and how the estate is distributed. that is the essence of what you will want to note under that section.<br><br><strong>Examination focus:</strong> If you get a question on the interpretation of wills and the effect of different types of gifts, what you want to focus on is how each type of gift is treated. In an examination scenario, look out for whether the gift is a specific gift, which is a particular item or piece of property, a general gift, which is usually a sum of money, or a residuary gift, which is whatever is left over after all other gifts and debts are paid. Each type of gift can have different implications for how the will is carried out. If you see a question on this, focus on identifying the type of gift and how it affects the distribution of the estate.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills10"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par10')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec11">
+ <h3>The interpretation of wills</h3>
+ <p class="subheading"><strong>Failure Of Gifts</strong></p>
+ <p id="wills-par11">Sometimes gifts in a will don&#x27;t end up being distributed as originally intended. This can happen for a few reasons. For example, the beneficiary may have died before the testator, which is called lapse, or the specific item that was supposed to be given is no longer part of the estate, which is called ademption. In other words, the gift fails if it cannot be carried out for these kinds of reasons, and that is something important to understand when interpreting and applying a will.<br><br><strong>Examination focus:</strong> when you get a question about failure of gifts, what you want to focus on is the reasons why a gift in a will may not be successfully distributed. In an examination scenario, you may see terms like &quot;lapse,&quot; which happens if the beneficiary dies before the testator, or &quot;ademption,&quot; which is when a specific gift no longer exists at the time of the testator&#x27;s death, like if a piece of property was sold before they died. The key point is to identify why the gift has failed and what happens next, for example, whether the gift falls into the residuary estate. If you see a failure of gifts question, focus on the reason the gift didn&#x27;t work out and what the consequences are.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills11"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par11')">Read aloud</button>
+ </div>
+ </div>
+
+ <h2 class="category">The intestacy rules</h2>
+ <div class="topic-section" id="wills-sec12">
+ <h3>The intestacy rules</h3>
+ <p class="subheading"><strong>Section 46 Of The Administration Of Estates Act 1925</strong></p>
+ <p id="wills-par12">Section 46 of the Administration of Estates Act 1925 essentially lays out the order of relatives who inherit when someone dies without a will, which is called dying intestate. The section says that first, the spouse or civil partner will inherit a substantial part of the estate, and if there are no children, they may inherit everything. If there are children, then the estate is divided between the spouse and the children. If there is no spouse, then it goes down the line to children, then to other relatives like parents, siblings, and so on.<br><br><strong>Examination focus:</strong> If you get a question about intestacy rules and specifically section 46 of the Administration of Estates Act, what you want to focus on is the statutory order of who inherits when someone dies without a will. In an examination scenario, you will need to know the hierarchy of relatives who are entitled to inherit under intestacy. that usually starts with the spouse or civil partner, then children, and then other relatives if there are no closer heirs. The key point is to understand who inherits and in what order if there is no will. If you see a question on that, think about the intestacy hierarchy and who is entitled to inherit.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills12"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par12')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec13">
+ <h3>The intestacy rules</h3>
+ <p class="subheading"><strong>The Statutory Trusts</strong></p>
+ <p id="wills-par13">Under the intestacy rules, when we talk about statutory trusts, what that really means is that if the estate is passing to certain relatives like children or more distant family members then the inheritance may be held on a statutory trust. This basically means that the inheritance is held in trust according to the rules set out by law. For example, if the beneficiaries are minors, the assets may be held in trust until they reach a certain age. Essentially, the statutory trust makes sure that the inheritance is managed and distributed according to those legal guidelines until the beneficiaries are able to inherit outright.<br><br><strong>Examination focus:</strong> when you get a question on statutory trusts under the intestacy rules, what you want to focus on is how the law holds assets on trust for certain beneficiaries. In an examination scenario, you will want to consider that if the beneficiaries are minors, or if the inheritance is held for someone until a certain condition is met, then the estate may be held on a statutory trust. This means the personal representatives manage the assets according to legal rules until the beneficiaries are entitled to receive them. If you see a question on statutory trusts, think about when and how the estate is held in trust for beneficiaries under the intestacy rules.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills13"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par13')">Read aloud</button>
+ </div>
+ </div>
+
+ <h2 class="category">Property passing outside the estate</h2>
+ <div class="topic-section" id="wills-sec14">
+ <h3>Property passing outside the estate</h3>
+ <p class="subheading"><strong>Joint Property</strong></p>
+ <p id="wills-par14">Jointly owned property often passes automatically to the surviving co-owner rather than being distributed under the will or through intestacy rules. This is known as the right of survivorship. For example, if two people own a property as joint tenants and one of them passes away, the surviving owner automatically inherits the deceased&#x27;s share. That means this property does not go through the will or the intestacy process at all. It passes directly to the other joint owner.<br><br><strong>Examination focus:</strong> When you get a question on property passing outside the estate, and specifically joint property, what you want to focus on is the right of survivorship. In an examination scenario, the key point is that when property is held jointly, for example as joint tenants, it automatically passes to the surviving co-owner when one of them dies, without going through the will or the intestacy process. If you see a question on joint property, focus on the idea that it passes directly to the other joint owner by survivorship, and does not form part of the deceased&#x27;s estate.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills14"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par14')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec15">
+ <h3>Property passing outside the estate</h3>
+ <p class="subheading"><strong>Life Policies</strong></p>
+ <p id="wills-par15">When we look at life policies under the topic of property passing outside the estate, the main point is that life insurance policies often have named beneficiaries. This means that when the policyholder passes away, the proceeds go directly to the named beneficiary and do not form part of the deceased&#x27;s estate. In other words, the payout from a life insurance policy is usually distributed outside the will or intestacy process. This can make it a straightforward way to provide for loved ones quickly, as the funds go directly to the designated individuals.<br><br><strong>Examination focus:</strong> If you get a question on life policies under property passing outside the estate, what you want to focus on is that the proceeds of a life insurance policy generally go directly to the named beneficiary and do not form part of the deceased&#x27;s estate. In an examination scenario, the key point is that life policies usually have designated beneficiaries, so the money from the policy is paid out directly to them and bypasses the will or intestacy. If you see a question on this, remember that life insurance proceeds go directly to the named beneficiaries and aren&#x27;t part of the estate.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills15"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par15')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec16">
+ <h3>Property passing outside the estate</h3>
+ <p class="subheading"><strong>Pension Scheme Benefits</strong></p>
+ <p id="wills-par16">Pension scheme benefits under the same idea of property passing outside the estate, the key point is similar to life policies. Pension benefits often have nominated beneficiaries, and those benefits are usually paid directly to those individuals rather than forming part of the deceased&#x27;s estate. This means that the pension scheme benefits pass outside the will or intestacy rules and go straight to whoever has been designated as a beneficiary. like life insurance, it is a way of providing for loved ones directly and quickly, outside of the normal estate distribution process.<br><br><strong>Examination focus:</strong> If you get a question about pension scheme benefits under property passing outside the estate, the key point is that pension benefits usually have nominated beneficiaries. This means that like life insurance, the benefits are paid directly to the named beneficiaries and do not form part of the deceased&#x27;s estate. In an examination scenario, you will want to highlight that pension scheme benefits bypass the estate and go straight to the chosen beneficiaries. If you see a question on that, remember that pension benefits are another example of property that passes outside the will or intestacy.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills16"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par16')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec17">
+ <h3>Property passing outside the estate</h3>
+ <p class="subheading"><strong>Trust Property</strong></p>
+ <p id="wills-par17">Trust property in the context of property passing outside the estate, the key idea is that any assets held in a trust are not considered part of the deceased&#x27;s estate for probate purposes. Instead, these assets are managed by the trustees according to the terms of the trust and they go directly to the beneficiaries named in that trust. Trust property is essentially in its own separate legal category and does not need to be dealt with through the will or intestacy. It is simply distributed according to the trust&#x27;s own terms.<br><br><strong>Examination focus:</strong> when you have a question about trust property under property passing outside the estate, the main idea is that any property held in a trust is managed according to the terms of that trust and does not form part of the deceased&#x27;s estate. In an examination scenario, you will want to focus on the fact that the trustees, not the personal representatives of the estate, control those trust assets. That means the property in the trust passes directly to the beneficiaries named in the trust, rather than going through the will or intestacy rules. If you see a question on trust property, remember that it is handled separately by the trustees and does not go through the deceased&#x27;s estate.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills17"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par17')">Read aloud</button>
+ </div>
+ </div>
+
+ <h2 class="category">Grants of representation</h2>
+ <div class="topic-section" id="wills-sec18">
+ <h3>Grants of representation</h3>
+ <p class="subheading"><strong>Need For Grant</strong></p>
+ <p id="wills-par18">A grant of representation is a legal document that authorizes someone to administer the estate of a deceased person. In other words, if you are dealing with someone&#x27;s estate, you usually need this grant to access their assets, like their bank accounts or property. If there is a will, this grant is called probate and it is given to the executors named in the will. If there is no will, it is called letters of administration and it is granted to the next of kin. the need for a grant is really about giving legal authority to manage and distribute the deceased&#x27;s estate.<br><br><strong>Examination focus:</strong> when you have a question about the need for a grant in the context of probate and administration, the key point is understanding that a grant of representation is the legal document that allows the personal representatives to manage and distribute the deceased&#x27;s estate. In an examination scenario, you want to focus on the fact that a grant of probate is needed if there is a will, and letters of administration are needed if there is no will. This grant is what gives the representatives the authority to deal with the estate&#x27;s assets, like accessing bank accounts or selling property. If you see a question on this, focus on the role of the grant as the document that authorizes the estate administration.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills18"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par18')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec19">
+ <h3>Grants of representation</h3>
+ <p class="subheading"><strong>The Relevant Provisions Of The Non-Contentious Probate Rules</strong></p>
+ <p id="wills-par19">When we talk about the relevant provisions of the non-contentious probate rules, we are essentially looking at the procedural rules that apply when there is not any dispute over the estate. These rules set out the process for obtaining a grant of probate or letters of administration in a smooth and straightforward manner. In other words, these provisions explain how to apply for the grant, what documents you need, and the steps to follow so that the estate can be administered without any contentious issues. It is essentially the set of rules that keeps the probate process running smoothly when everyone is in agreement.<br><br><strong>Examination focus:</strong> if you have a question on the relevant provisions of the non-contentious probate rules, you want to focus on the procedural aspects of applying for a grant of probate or letters of administration when there is no dispute or contention. In an examination scenario, the key point is to understand the steps and requirements for making a straightforward probate application, like submitting the correct forms, providing the necessary documents, and following the formal process set out in these rules. Essentially, it is about the non-contentious, or uncontested, process of getting the grant. If you see a question on this, focus on the procedural steps for a non-contentious probate application.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills19"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par19')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec20">
+ <h3>Grants of representation</h3>
+ <p class="subheading"><strong>Application Procedure</strong></p>
+ <p id="wills-par20">When you are applying for a grant of representation whether it is probate or letters of administration you will generally need to follow these steps. First, you complete an application form, which in England and Wales is usually the PA1P form for probate if there is a will, or PA1A if there is not. Next, you will need to submit the original will if there is one, along with the death certificate and an inheritance tax form. Once you&#x27;ve got all that paperwork ready, you send it to the probate registry and pay the applicable fee. After that, if everything is in order, the registry will issue the grant, which then gives you the legal authority to start administering the estate. the application procedure is really about filling out the right forms, providing the necessary documents, and then waiting for the grant to be issued.<br><br><strong>Examination focus:</strong> If you get a question on the application procedure for probate, what you want to focus on is the step-by-step process of applying for a grant of probate or letters of administration. In an examination scenario, you will need to outline the key steps, such as completing the appropriate application forms, submitting the will and the death certificate, and paying any required fees. Essentially, the application procedure is all about following the formal process to get the legal authority to administer the estate. If you see a question on this, focus on the main procedural steps involved in applying for the grant.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills20"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par20')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec21">
+ <h3>Grants of representation</h3>
+ <p class="subheading"><strong>Valuation Of Assets And Liabilities</strong></p>
+ <p id="wills-par21">When it comes to the valuation of assets and liabilities as part of the probate and administration process, the key detail is that you need to figure out the total value of everything the deceased owned as well as any debts they owed. This includes valuing property, bank accounts, investments, personal belongings, and any other assets. You also need to list out any liabilities, like outstanding loans or bills. This valuation is important because it helps determine if there is any inheritance tax to pay and it ensures that the estate is distributed correctly. in your notes, you will want to mention that the valuation of assets and liabilities is a crucial step in assessing the overall estate and making sure everything is handled accurately.<br><br><strong>Examination focus:</strong> When you get a question about the valuation of assets and liabilities, the key point is that you need to establish the total value of the deceased&#x27;s estate for probate purposes. In an examination scenario, you will want to mention that all the assets things like property, money, investments need to be valued, and all the liabilities such as debts and outstanding bills need to be accounted for. The valuation is important because it determines if there is any inheritance tax to pay and helps ensure that the estate is distributed correctly. If you see a question on valuation, focus on the process of assessing the total worth of the estate&#x27;s assets and deducting any liabilities.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills21"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par21')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec22">
+ <h3>Grants of representation</h3>
+ <p class="subheading"><strong>Excepted Estates</strong></p>
+ <p id="wills-par22">In excepted estate, in more detail, is generally one that falls below a certain value threshold, which in England and Wales is currently £325,000, or where the estate is passing entirely to a spouse or a charity. In those cases, you often don&#x27;t need to submit a full inheritance tax account. Another example of an excepted estate is if the estate has a lower value but is still under the nil-rate band, or if it is a low-value estate that is simply not liable for inheritance tax because it is all passing to an exempt beneficiary. the key point for your notes is that excepted estates are those under the tax threshold or meeting conditions like passing entirely to a spouse or charity, which makes the process simpler and avoids a full inheritance tax form.<br><br><strong>Examination focus:</strong> When you have a question on excepted estates, what you want to focus on is the criteria that make an estate simpler to administer because it falls below a certain value or meets specific conditions. In an examination scenario, you will want to mention that excepted estates are usually those that are under the inheritance tax threshold, or those where the entire estate passes to an exempt beneficiary like a spouse or charity. This means you don&#x27;t have to fill out a full inheritance tax account, and the probate process is simpler. If you see a question on excepted estates, focus on the fact that these are lower-value estates or those meeting specific exemptions, making them easier to deal with.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills22"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par22')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec23">
+ <h3>Grants of representation</h3>
+ <p class="subheading"><strong>Methods Of Funding The Initial Payment Of Inheritance Tax</strong></p>
+ <p id="wills-par23">In terms of methods of funding that initial inheritance tax payment, you are right that we want to be thorough. You can indeed ask the deceased&#x27;s bank to pay HMRC directly from their account, which is quite common. Another option is taking out a loan, often called a probate loan or executor&#x27;s loan, which is specifically designed to cover inheritance tax and is then repaid from the estate. Sometimes people may also use their own personal funds if they&#x27;re confident of reimbursement from the estate later. But the main idea is that you need to have a plan for accessing funds usually through the deceased&#x27;s bank or a short-term loan to pay that inheritance tax upfront before probate can be granted. that should cover the methods in a bit more detail.<br><br><strong>Examination focus:</strong> When you have a question on the methods of funding the initial payment of inheritance tax, the key point is to explain how the personal representatives can raise the funds to pay any inheritance tax that is due before the estate is fully administered. In an examination scenario, you will want to mention that they may use funds from the deceased&#x27;s bank account, if the bank is willing to release money directly to HMRC, or they may arrange a loan that is repaid from the estate later. Sometimes they may use their own funds temporarily if they&#x27;re confident of being reimbursed. If you see a question on this, focus on the practical ways to raise the initial tax payment, either from the estate&#x27;s own funds or through short-term financing.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills23"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par23')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec24">
+ <h3>Grants of representation</h3>
+ <p class="subheading"><strong>Burden And Incidence Of Inheritance Tax</strong></p>
+ <p id="wills-par24">When we talk about the burden and incidence of inheritance tax, we are really looking at who is responsible for paying it and how it affects the different beneficiaries. In general, the inheritance tax is paid out of the estate before the assets are distributed. The executor or administrator is the one who actually handles the payment using the estate&#x27;s funds. Once the tax is paid, the remaining estate can be distributed to the beneficiaries. It is worth noting that sometimes specific gifts in a will may be given free of tax, meaning the tax is taken from the residuary estate rather than that gift. But in general, the estate itself bears the burden of the inheritance tax before distribution.<br><br><strong>Examination focus:</strong> When you have a question on the burden and incidence of inheritance tax, what you want to focus on is who is responsible for paying the inheritance tax and how it affects the estate. In an examination scenario, you will want to mention that the inheritance tax is typically paid out of the estate before any distributions are made to the beneficiaries. The personal representatives are the ones who handle the payment of the tax from the estate&#x27;s funds. Essentially, the burden of the tax falls on the estate itself before the remaining assets are distributed. If you see a question on this, remember that the estate pays the inheritance tax first, and then the rest is distributed to the beneficiaries.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills24"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par24')">Read aloud</button>
+ </div>
+ </div>
+
+ <h2 class="category">Administration of estates</h2>
+ <div class="topic-section" id="wills-sec25">
+ <h3>Administration of estates</h3>
+ <p class="subheading"><strong>Duties Of Personal Representatives</strong></p>
+ <p id="wills-par25">Under the heading of administration of estates, and specifically the duties of personal representatives, what you will want to note is that personal representatives whether they&#x27;re executors named in a will or administrators if there is no will have a range of key duties. First, they need to collect and secure all the assets of the estate, which may include things like property, money, and personal belongings. They also need to pay off any debts or liabilities the deceased had, including settling any tax liabilities. Once all that is done, they distribute the remaining assets to the beneficiaries according to the will or the rules of intestacy. They also have a duty to keep careful records and to act in the best interests of the beneficiaries, making sure they&#x27;re being honest and impartial. personal representatives have to gather the assets, pay the debts, and then distribute what&#x27;s left, all while acting in the best interests of the estate and the beneficiaries.<br><br><strong>Examination focus:</strong> when you have a question about the duties of personal representatives in the administration of estates, the key point is that personal representatives, whether they&#x27;re executors named in a will or administrators if there is no will, have a range of responsibilities. In an examination scenario, you will want to focus on the fact that personal representatives have to gather and secure the estate&#x27;s assets, pay off any debts or liabilities, and then distribute what&#x27;s left to the beneficiaries according to the will or the rules of intestacy. Essentially, their duties include managing the estate properly, acting in the best interests of the beneficiaries, and making sure everything is done according to the law. If you see a question on this, think about those core responsibilities: collecting assets, paying debts, and distributing the estate.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills25"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par25')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec26">
+ <h3>Administration of estates</h3>
+ <p class="subheading"><strong>Liabilities Of Personal Representatives And Their Protection</strong></p>
+ <p id="wills-par26">Personal representatives do have certain legal responsibilities and can be held personally liable if they don&#x27;t fulfill their duties properly. For example, if they distribute the estate incorrectly or fail to pay the debts and taxes before distributing assets, they could be personally responsible for making up any shortfall. However, they do have some protections. For instance, they can take out insurance to cover themselves against certain risks, and they can also apply to the court for directions if they&#x27;re unsure about how to proceed. In other words, as long as they act in good faith and follow the rules, they have ways to protect themselves from personal liability. that is the main idea: they are liable if they don&#x27;t do things correctly, but they do have ways to protect themselves and get guidance if needed.<br><br><strong>Examination focus:</strong> if you have a question on the liabilities of personal representatives and their protection, what you want to focus on is the fact that personal representatives can be held personally liable if they don&#x27;t carry out their duties properly. In an examination scenario, you will want to mention that they have to act in the best interests of the estate and the beneficiaries, and that they need to follow the law carefully. If they make mistakes, they may have to personally compensate the estate. However, they do have some protections: they can take out insurance, they can apply to the court for directions if they&#x27;re unsure, and as long as they act honestly and reasonably, they&#x27;re generally protected. If you see a question on this, focus on the balance of their responsibilities and the protections they have.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills26"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par26')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec27">
+ <h3>Administration of estates</h3>
+ <p class="subheading"><strong>The Sale Of Assets To Raise Funds To Pay Funeral Expenses, Tax, Debts And Legacies</strong></p>
+ <p id="wills-par27">When it comes to the sale of assets to raise funds for things like funeral expenses, taxes, debts, and legacies, the personal representatives often need to turn some of the estate&#x27;s assets into cash. This may mean selling property, investments, or valuable items so that there is enough money to cover all those costs. It is basically part of their role to make sure that all the estate&#x27;s obligations are paid before distributing anything to the beneficiaries. And of course, they need to do this in a fair and reasonable way, getting a proper valuation for the assets and selling them for a fair price. in your notes, you can jot down that selling assets is a common step to make sure all expenses and debts are paid before the estate is distributed.<br><br><strong>Examination focus:</strong> when you have a question about the sale of assets to raise funds for things like funeral expenses, taxes, debts, and legacies, the key point is that the personal representatives may need to convert some of the estate&#x27;s assets into cash. In an examination scenario, you will want to mention that this often involves selling property, investments, or other valuables to make sure there is enough money to cover all the estate&#x27;s obligations before distributing what&#x27;s left to the beneficiaries. Essentially, the personal representatives have a duty to ensure that all debts and expenses are paid first, and selling assets is often part of that process. If you see a question on this, focus on how the sale of assets is used to settle the estate&#x27;s financial obligations.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills27"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par27')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec28">
+ <h3>Administration of estates</h3>
+ <p class="subheading"><strong>Distribution Of The Estate</strong></p>
+ <p id="wills-par28">Under the distribution of the estate, once all the debts, taxes, and expenses are paid, the personal representatives will distribute what&#x27;s left of the estate to the beneficiaries. If there is a will, they&#x27;ll follow the instructions in the will and distribute the assets accordingly. If there is no will, then they&#x27;ll distribute the estate according to the rules of intestacy, which sets out a specific order of relatives who will inherit. The key point is that the personal representatives have to make sure everyone gets what they&#x27;re entitled to, whether that is a specific gift or a share of the residuary estate. in your notes, highlight that distribution is the final step where the remaining assets are handed out to the rightful beneficiaries, either under the will or under intestacy rules.<br><br><strong>Examination focus:</strong> When you get a question on the distribution of the estate, the key point is that this is the final stage where the personal representatives hand out the remaining assets to the beneficiaries. In an examination scenario, you will want to focus on whether the distribution is being done according to the will, if there is one, or according to the rules of intestacy if there is not. The personal representatives must ensure that all debts, taxes, and expenses are paid before they distribute the estate to the beneficiaries. If you see a question on distribution, focus on that final step of ensuring that the beneficiaries receive what they are entitled to, based on the will or intestacy rules.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills28"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par28')">Read aloud</button>
+ </div>
+ </div>
+
+ <h2 class="category">Claims against estates under the Inheritance (Provision for Family and Dependants) Act 1975</h2>
+ <div class="topic-section" id="wills-sec29">
+ <h3>Claims against estates under the Inheritance (Provision for Family and Dependants) Act 1975</h3>
+ <p class="subheading"><strong>Time Limit</strong></p>
+ <p id="wills-par29">Claims against estates under the Inheritance (Provision for Family and Dependants) Act 1975, this is essentially about certain people such as family members or dependants being able to make a claim if they feel they have not been reasonably provided for by the deceased&#x27;s will or by the intestacy rules. Now, in terms of the timing, there is a specific timeframe. Generally, a claim under this Act must be made within six months from the date that the grant of representation is issued. That means once probate or letters of administration are granted, there is a six-month window for someone to bring a claim if they believe they have not been properly provided for. in your notes, highlight that this Act allows certain individuals to make a claim for reasonable financial provision and that they have to do so within six months of the grant of representation.<br><br><strong>Examination focus:</strong> When you have a question about claims against estates under the Inheritance Act and specifically the time limit, the key point is that anyone making a claim under this act usually has to do so within six months from the date the grant of representation is issued. In an examination scenario, you will want to focus on the importance of this time limit because if a claim is not made within those six months, the claimant may lose the right to make a claim unless the court allows it. If you see a question on the time limit, remember that six-month window from the grant of representation is key for anyone bringing a claim under the Inheritance Act.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills29"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par29')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec30">
+ <h3>Claims against estates under the Inheritance (Provision for Family and Dependants) Act 1975</h3>
+ <p class="subheading"><strong>Applicants</strong></p>
+ <p id="wills-par30">Claims under the Inheritance (Provision for Family and Dependants) Act 1975, the term applicants refers to the people who are eligible to make such a claim. These applicants typically include spouses or civil partners, children, or anyone who was financially dependent on the deceased. In other words, these are the individuals who can argue that they should have received more reasonable financial provision from the estate. in your notes, you can jot down that applicants are typically close family members or dependants who can apply for provision if they feel left out or not adequately provided for. <br><br><strong>Examination focus:</strong> When you have a question about applicants under the Inheritance Act, the key point is to identify who is eligible to make a claim for reasonable financial provision from the estate. In an examination scenario, you will want to mention that eligible applicants typically include close family members like spouses, civil partners, children, or anyone who was financially dependent on the deceased. These are the people who can apply to the court if they feel they have not been adequately provided for. If you see a question on applicants, focus on who is eligible to bring a claim under the act.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills30"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par30')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec31">
+ <h3>Claims against estates under the Inheritance (Provision for Family and Dependants) Act 1975</h3>
+ <p class="subheading"><strong>Ground</strong></p>
+ <p id="wills-par31">Absolutely, let&#x27;s cover that. under the subheading of grounds, when we are talking about claims under the Inheritance Act, the grounds are essentially the reasons or the basis on which someone can make a claim. Typically, the main ground is that the will or the intestacy rules do not make reasonable financial provision for the applicant. In other words, they have to show that they were not adequately provided for and that they need financial provision from the estate to meet their needs. in your notes, highlight that the grounds for a claim are based on the idea that the applicant was not reasonably provided for and that they need the court to order that they receive a fair share from the estate.<br><br><strong>Examination focus:</strong> When you have a question about grounds for claims under the Inheritance Act, the key point is to understand the reasons why someone can make a claim for reasonable financial provision. In an examination scenario, you will want to focus on the idea that the claimant needs to show that the will or the intestacy rules do not make reasonable provision for them, given their circumstances. In other words, they have to demonstrate that they were not adequately provided for and that they need financial provision from the estate. If you see a question on grounds, focus on the basis for the claim, which is that the applicant believes they have not been reasonably provided for.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills31"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par31')">Read aloud</button>
+ </div>
+ </div>
+
+ <h2 class="category">Inheritance Tax</h2>
+ <div class="topic-section" id="wills-sec32">
+ <h3>Inheritance Tax</h3>
+ <p class="subheading"><strong>Lifetime Transfers That Are Immediately Chargeable And Those That Are Potentially Exempt</strong></p>
+ <p id="wills-par32">Under the topic of inheritance tax in the context of wills and administration of estates, you will want to understand the difference between lifetime transfers that are immediately chargeable and those that are potentially exempt. Immediately chargeable lifetime transfers (often called CLTs) are typically transfers into most types of trusts. These are chargeable to inheritance tax at the time they are made if they exceed the nil-rate band, which is the tax-free threshold. On the other hand, potentially exempt transfers (or PETs) are usually outright gifts to individuals. These are not immediately subject to inheritance tax at the time they are made. Instead, they only become taxable if the person making the gift dies within seven years of making that gift. If you see a question on this, you will want to focus on whether the lifetime transfer is immediately chargeable (like a transfer into a trust) or potentially exempt (like a gift to an individual) and how that affects when inheritance tax may be due.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills32"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par32')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec33">
+ <h3>Inheritance Tax</h3>
+ <p class="subheading"><strong>Transfers On Death</strong></p>
+ <p id="wills-par33">When we talk about transfers on death in the context of wills and estates, we are looking at how assets pass when someone dies and what the inheritance tax implications may be. In an examination scenario, you will want to think about the types of assets that transfer automatically on death, like jointly owned property passing to the surviving joint owner or life insurance proceeds going directly to a named beneficiary. You will also consider what assets form part of the estate and are subject to inheritance tax. If you see a question on transfers on death, think about which assets pass outside the estate and which are part of the estate and taxable.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills33"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par33')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec34">
+ <h3>Inheritance Tax</h3>
+ <p class="subheading"><strong>Exemptions And Reliefs</strong></p>
+ <p id="wills-par34">when you have a question on exemptions and reliefs in the context of inheritance tax, the key point is to identify which assets or transfers can reduce the inheritance tax liability. In an examination scenario, you will want to focus on common exemptions like the spousal exemption, where anything left to a spouse or civil partner is free from inheritance tax, and the annual exemption for lifetime gifts. You will also want to consider reliefs like business property relief or agricultural property relief, which can reduce the value of certain assets for inheritance tax purposes. If you see a question on exemptions and reliefs, focus on the ways that certain transfers or types of property can reduce or eliminate the tax due.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills34"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par34')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec35">
+ <h3>Inheritance Tax</h3>
+ <p class="subheading"><strong>The Scope Of Anti-Avoidance Provisions</strong></p>
+ <p id="wills-par35">when you have a question on the scope of anti-avoidance provisions in the context of inheritance tax, the key point is to understand how the law tries to prevent people from using artificial arrangements to avoid paying inheritance tax. In an examination scenario, you will want to focus on the rules that target schemes or transfers that are intended to sidestep the tax. For example, rules that look at gifts with reservation of benefit, where someone gives away an asset but still keeps using it, or pre-owned asset rules that try to catch situations where people try to avoid inheritance tax by transferring assets but still benefiting from them. If you see a question on the scope of anti-avoidance provisions, focus on how these rules are designed to prevent people from using certain tactics to avoid inheritance tax, and consider what kinds of arrangements those rules are meant to catch.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills35"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par35')">Read aloud</button>
+ </div>
+ </div>
+
+ <h2 class="category">Income and Capital Gains Tax in respect of the period of the administration of an estate</h2>
+ <div class="topic-section" id="wills-sec36">
+ <h3>Income and Capital Gains Tax in respect of the period of the administration of an estate</h3>
+ <p class="subheading"><strong>The Personal Representatives’ Liability To Income Tax And Capital Gains Tax</strong></p>
+ <p id="wills-par36">Personal representatives are responsible for handling these taxes during the period of administration. In an examination scenario, you will want to note that any income generated by the estate&#x27;s assets, like rental income or dividends, is subject to income tax, and any gains from the sale of assets may be subject to capital gains tax. The personal representatives have to report and pay these taxes out of the estate before distributing the remaining assets to the beneficiaries. If you see a question on this, focus on the fact that the personal representatives are liable for managing and paying any income tax and capital gains tax that arise during the administration period.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills36"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par36')">Read aloud</button>
+ </div>
+ </div>
+
+ <div class="topic-section" id="wills-sec37">
+ <h3>Income and Capital Gains Tax in respect of the period of the administration of an estate</h3>
+ <p class="subheading"><strong>The Beneficiaries’ Liability To Capital Gains Tax On Inherited Assets</strong></p>
+ <p id="wills-par37">The key point is to understand that once the beneficiaries receive the assets from the estate, any future capital gains tax liability is theirs. In an examination scenario, you will want to note that the beneficiaries inherit the assets at their market value at the date of death. If they later sell those assets and they&#x27;ve increased in value, then they may have to pay capital gains tax on the gain. The estate itself handles any capital gains tax due during the administration period, but once the assets are in the hands of the beneficiaries, any further gain is their responsibility. If you see a question on this, focus on the idea that beneficiaries may have to pay capital gains tax if the inherited assets appreciate in value after they&#x27;ve received them.</p>
+ <div class="controls">
+ <input type="checkbox" data-id="wills37"> Mark as read
+ <button class="speak-btn" onclick="speakParagraph('wills-par37')">Read aloud</button>
+ </div>
+ </div>
+
+ <hr>
+ <p><strong>References:</strong></p>
+ <ul>
+ <li>Wills Act 1837, section 9 (formalities).</li>
+ <li>Administration of Estates Act 1925, section 46 (intestacy order of entitlement).</li>
+ <li>Trustee Act 1925, section 27 (advertisements for creditors and protection for personal representatives).</li>
+ <li>Inheritance Tax Act 1984, section 19 (annual exemption for lifetime gifts).</li>
+ <li>Inheritance (Provision for Family and Dependants) Act 1975 (claims for reasonable financial provision).</li>
+ </ul>
+ <p>Primary legislation is available on legislation.gov.uk.</p>
+ </div>
+ <script src="../script.js"></script>
 </body>
 </html>
