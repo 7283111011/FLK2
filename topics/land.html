@@ -15,106 +15,285 @@
       <a href="../quiz.html">Practice Exam</a>
     </nav>
   </header>
-  <div class="container">
-    <h2>Core Topics in Land Law</h2>
-    <!-- Section 1: Nature of Land -->
-    <div class="topic-section" id="land-sec1">
-      <h3>Nature of Land and Estates</h3>
-      <p id="land-par1">English land law distinguishes between real property (land and interests in land) and personal property. Legal estates are limited to two kinds: freehold estates in fee simple absolute in possession and leasehold estates (terms of years absolute). A valid transfer of a legal estate must be made by deed complying with section 52 of the Law of Property Act 1925, while equitable interests may arise under trusts or contracts. Conveyances of land must also comply with registration requirements under the Land Registration Act 2002 or, for unregistered land, with the doctrines of deeds and the doctrine of notice.</p>
-      <div class="controls">
-        <input type="checkbox" data-id="land1"> Mark as read
-        <button class="speak-btn" onclick="speakParagraph('land-par1')">Read aloud</button>
-      </div>
-      <div class="true-false">
-        <span>True or False: Only freehold and leasehold estates can exist as legal estates in land and transfers of legal title must be made by deed.</span>
-        <label><input type="radio" name="land-tf1" value="true"> True</label>
-        <label><input type="radio" name="land-tf1" value="false"> False</label>
-        <button class="speak-btn" onclick="handleTrueFalse('land-tf1','true')">Check</button>
-        <div class="feedback" id="land-tf1-feedback"></div>
-      </div>
+  
+<div class="container">
+  <h2>Core Topics in Land Law</h2>
+  <h2 class="category">Nature of Land</h2>
+  <div class="topic-section" id="land-sec1">
+    <h3>Nature of Land</h3>
+    <p class="subheading"><strong>Distinction Between Real Property And Personal Property</strong></p>
+    <p id="land-par1">In legal terms, real property-often called realty-refers to interests in land and things permanently affixed to it, like buildings or structures. It is governed by principles that deal with ownership, usage rights, and any interests in the land itself. On the other hand, personal property-or personalty-refers to movable items that are not fixed to one location, like furniture, vehicles, or personal belongings. It is essentially everything you can move around. So in an academic context, the distinction is really about the permanence and attachment to land for real property versus the mobility of personal property.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land1"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par1')">Read aloud</button>
     </div>
-    <!-- Section 2: Title to Land -->
-    <div class="topic-section" id="land-sec2">
-      <h3>Title to Land and Registration</h3>
-      <p id="land-par2">The Land Registration Act 2002 introduced a system of title registration whereby ownership and many interests in land must be recorded on the register. Freehold estates and leaseholds of more than seven years are registrable. Overriding interests, such as legal easements and some leases, bind a purchaser of registered land even though they do not appear on the register; the 2002 Act aims to reduce such interests and lists those that override first registration and subsequent dispositions separately. Unregistered land continues to be governed by title deeds, land charges and the doctrine of notice; equitable interests must be protected by registration as land charges to bind purchasers.</p>
-      <div class="controls">
-        <input type="checkbox" data-id="land2"> Mark as read
-        <button class="speak-btn" onclick="speakParagraph('land-par2')">Read aloud</button>
-      </div>
-      <div class="true-false">
-        <span>True or False: Overriding interests may bind a registered title even if they are not entered on the register, though the Land Registration Act 2002 restricts the categories of such interests.</span>
-        <label><input type="radio" name="land-tf2" value="true"> True</label>
-        <label><input type="radio" name="land-tf2" value="false"> False</label>
-        <button class="speak-btn" onclick="handleTrueFalse('land-tf2','true')">Check</button>
-        <div class="feedback" id="land-tf2-feedback"></div>
-      </div>
-    </div>
-    <!-- Section 3: Co‑ownership -->
-    <div class="topic-section" id="land-sec3">
-      <h3>Co‑ownership and Trusts of Land</h3>
-      <p id="land-par3">Where more than one person owns land, they do so as joint tenants or tenants in common. A joint tenancy is characterised by the four unities (possession, interest, title and time); each co‑owner is entitled to the whole and the right of survivorship operates so that on death their share automatically passes to the others. By statute, legal co‑ownership must be a joint tenancy, but the beneficial interest may be held as a joint tenancy or as a tenancy in common in shares. A tenancy in common gives each co‑owner a distinct share without the right of survivorship. Joint tenants may sever the tenancy to become tenants in common, for example by serving a notice of severance under section 36(2) of the Law of Property Act 1925. Disputes between co‑owners as to sale or occupation may be determined under sections 14–15 of the Trusts of Land and Appointment of Trustees Act 1996.</p>
-      <div class="controls">
-        <input type="checkbox" data-id="land3"> Mark as read
-        <button class="speak-btn" onclick="speakParagraph('land-par3')">Read aloud</button>
-      </div>
-      <div class="true-false">
-        <span>True or False: In a joint tenancy each co‑owner is treated as entitled to the whole land and the right of survivorship applies, whereas in a tenancy in common each owns a distinct share without survivorship.</span>
-        <label><input type="radio" name="land-tf3" value="true"> True</label>
-        <label><input type="radio" name="land-tf3" value="false"> False</label>
-        <button class="speak-btn" onclick="handleTrueFalse('land-tf3','true')">Check</button>
-        <div class="feedback" id="land-tf3-feedback"></div>
-      </div>
-    </div>
-    <!-- Section 4: Proprietary Rights -->
-    <div class="topic-section" id="land-sec4">
-      <h3>Proprietary Rights: Easements, Covenants and Mortgages</h3>
-      <p id="land-par4">Certain non‑possessory rights in land are termed proprietary rights. Easements are rights enjoyed by one landowner over another’s land; to be valid, an easement requires a dominant and servient tenement, the right must accommodate the dominant land, the owners must be different and the right must be capable of forming the subject matter of a grant. Freehold covenants are promises relating to the use of land; the benefit and burden of positive and restrictive covenants may pass to successors in title under common law and equity, subject to rules such as the requirement of intention to benefit and the doctrine in Tulk v Moxhay. Mortgages are security interests over land: the lender takes a legal charge and has powers to sell or possess the property upon default, but owes duties to act in good faith and to obtain a proper price. The priority of mortgages is determined by order of registration; mortgagors have an equitable right to redeem.</p>
-      <div class="controls">
-        <input type="checkbox" data-id="land4"> Mark as read
-        <button class="speak-btn" onclick="speakParagraph('land-par4')">Read aloud</button>
-      </div>
-      <div class="true-false">
-        <span>True or False: An easement requires a dominant and servient tenement and must accommodate the dominant land, and the priority of mortgages is determined by the order in which they are registered.</span>
-        <label><input type="radio" name="land-tf4" value="true"> True</label>
-        <label><input type="radio" name="land-tf4" value="false"> False</label>
-        <button class="speak-btn" onclick="handleTrueFalse('land-tf4','true')">Check</button>
-        <div class="feedback" id="land-tf4-feedback"></div>
-      </div>
-    </div>
-    <!-- Section 5: Leases and Licences -->
-    <div class="topic-section" id="land-sec5">
-      <h3>Leases, Licences and Remedies</h3>
-      <p id="land-par5">A lease (tenancy) grants exclusive possession of land for a term at a rent, creating a legal estate. In contrast, a licence merely permits occupation without conferring proprietary rights. The relationship between landlord and tenant is underpinned by privity of contract and privity of estate; covenants in the lease bind successors depending on whether they touch and concern the land. Remedies for breach of covenants include forfeiture (by peaceable re‑entry or court order), action for rent arrears, specific performance and damages, but the landlord must comply with procedural requirements such as serving a section 146 notice. Leases may be terminated by effluxion of time, surrender (express or implied) or merger when the same person acquires the reversion and the leasehold. Break clauses in leases must be exercised strictly in accordance with their terms.</p>
-      <div class="controls">
-        <input type="checkbox" data-id="land5"> Mark as read
-        <button class="speak-btn" onclick="speakParagraph('land-par5')">Read aloud</button>
-      </div>
-      <div class="true-false">
-        <span>True or False: A lease confers exclusive possession for a term and may be forfeited for breach of covenant, whereas a licence merely grants permission to occupy without a proprietary estate.</span>
-        <label><input type="radio" name="land-tf5" value="true"> True</label>
-        <label><input type="radio" name="land-tf5" value="false"> False</label>
-        <button class="speak-btn" onclick="handleTrueFalse('land-tf5','true')">Check</button>
-        <div class="feedback" id="land-tf5-feedback"></div>
-      </div>
-    </div>
-    <!-- Section 6: Security of Tenure -->
-    <div class="topic-section" id="land-sec6">
-      <h3>Business Tenancies and Security of Tenure</h3>
-      <p id="land-par6">Business tenants occupying premises for the purposes of a business enjoy statutory security of tenure under Part II of the Landlord and Tenant Act 1954. Section 24 provides that a business tenancy will not end automatically at expiry but will continue until terminated in accordance with the Act; section 25 enables the landlord to serve notice to terminate or offer a new tenancy, and section 26 allows the tenant to request a new tenancy. The court may grant a new tenancy for a term not exceeding 15 years on terms it considers just if the parties cannot agree. The landlord may oppose renewal on specific grounds such as own occupation or redevelopment, and compensation may be payable if certain grounds are proved.</p>
-      <div class="controls">
-        <input type="checkbox" data-id="land6"> Mark as read
-        <button class="speak-btn" onclick="speakParagraph('land-par6')">Read aloud</button>
-      </div>
-      <div class="true-false">
-        <span>True or False: Under the Landlord and Tenant Act 1954 business tenants are entitled to request a new tenancy, and if terms cannot be agreed the court may grant a new tenancy for a term of up to 15 years.</span>
-        <label><input type="radio" name="land-tf6" value="true"> True</label>
-        <label><input type="radio" name="land-tf6" value="false"> False</label>
-        <button class="speak-btn" onclick="handleTrueFalse('land-tf6','true')">Check</button>
-        <div class="feedback" id="land-tf6-feedback"></div>
-      </div>
-    </div>
-    <p><strong>References:</strong> The above summary draws on HM Land Registry guidance on overriding interests and legal commentary explaining that legal co‑ownership must be a joint tenancy but beneficial interests may be joint or tenancies in common with survivorship applying only to joint tenants. The description of business tenants’ security of tenure refers to sections 24–28 of the Landlord and Tenant Act 1954.</p>
   </div>
-  <script src="../script.js"></script>
+
+  <div class="topic-section" id="land-sec2">
+    <h3>Nature of Land</h3>
+    <p class="subheading"><strong>How To Acquire And Transfer Legal Estates</strong></p>
+    <p id="land-par2">In essence, acquiring a legal estate in land usually involves a formal process of transfer, most commonly through a sale. This is done by executing a legal document called a deed, which must meet certain formal requirements-like being in writing, clearly describing the property, and being signed, witnessed, and delivered. On the other side, transferring a legal estate means conveying your ownership interest to someone else, typically by that same deed process. The transaction is then completed by registering the new ownership with the relevant land registry. So in short, it is all about using a deed to formally document and then register the change in ownership.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land2"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par2')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec3">
+    <h3>Nature of Land</h3>
+    <p class="subheading"><strong>How To Acquire And Dispose Of Legal And Equitable Interests In Land</strong></p>
+    <p id="land-par3">To acquire and dispose of both legal and equitable interests in land, you are essentially dealing with two layers. First, for legal interests, these are transferred through formal legal instruments-like a deed of transfer-and then registered with the land registry. That gives you the official legal title. Now, equitable interests are a bit more nuanced. They can arise through trusts or other equitable arrangements. You might acquire an equitable interest if someone holds the property on trust for you, for example. Disposing of that equitable interest would also usually involve a written instrument, like a declaration of trust or a similar document that aligns with equitable principles. So in short, legal interests are all about the formal deed and registration process, while equitable interests rely on the principles of equity and trust law, often running alongside that legal title.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land3"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par3')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec4">
+    <h3>Nature of Land</h3>
+    <p class="subheading"><strong>Methods To Protect And Enforce Third Party Interests</strong></p>
+    <p id="land-par4">When we’re talking about protecting and enforcing third-party interests in land, we’re usually looking at mechanisms like registration and notices. For example, in many jurisdictions, a third-party interest-like an easement or a restrictive covenant-can be protected by entering it onto the land register. That way, anyone dealing with the property will be aware of that interest. In terms of enforcement, if a third party has a recognized interest, they can often enforce it through the courts if it is not respected-like seeking an injunction or damages. So really, it is about making sure the interest is properly recorded and then using legal remedies to uphold it if there’s ever a conflict.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land4"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par4')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec5">
+    <h3>Nature of Land</h3>
+    <p class="subheading"><strong>Different Ways In Which Land Can Be Held</strong></p>
+    <p id="land-par5">So land can generally be held in a few different ways. One common way is sole ownership, where one individual holds the entire legal title. Another way is joint ownership, which can be either as joint tenants-where all owners have equal rights and the right of survivorship applies-or as tenants in common, where each owner has a distinct share that can be passed on separately. Land can also be held through a trust, where trustees hold the legal title on behalf of beneficiaries who have the equitable interest. And of course, there is leasehold, where someone holds an interest in the land for a fixed term under a lease, while the freeholder retains the ultimate ownership. So those are some of the main ways land can be held, and each comes with its own legal implications.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land5"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par5')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec6">
+    <h3>Nature of Land</h3>
+    <p class="subheading"><strong>Legal Formalities Required To Create And Transfer Interests And Estates In Land</strong></p>
+    <p id="land-par6">So to create and transfer interests or estates in land, certain formalities have to be followed to make it legally valid. Generally, any transfer of a legal estate-like freehold or leasehold-needs to be done by a deed. That means it has to be in writing, it needs to clearly state that it is intended to be a deed, and it has to be signed, witnessed, and delivered according to legal requirements. For equitable interests, you still need to have the agreement in writing, especially for things like trusts, to comply with the relevant statute of frauds or similar laws. And once you’ve got the right formalities in place, you typically register the interest with the land registry to make it official. So it all comes down to making sure the right documents are used, the right signatures and witnesses are in place, and the interest is properly recorded.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land6"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par6')">Read aloud</button>
+    </div>
+  </div>
+
+  <h2 class="category">Title to land</h2>
+  <div class="topic-section" id="land-sec7">
+    <h3>Title to land</h3>
+    <p class="subheading"><strong>Registration Of Title To Land: Estates That Can Be Substantively Registered</strong></p>
+    <p id="land-par7">So when we talk about estates that can be substantively registered, we’re really looking at freehold and leasehold estates. These are the main categories of legal estates in land that can be registered with the Land Registry. Essentially, when you have a freehold estate, you are registering outright ownership of the property. And if it is a leasehold estate, you are registering the right to use the property for a certain period of time under a lease. So in a nutshell, those are the primary estates that you’d be looking to substantively register to have that clear, legally recognized title.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land7"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par7')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec8">
+    <h3>Title to land</h3>
+    <p class="subheading"><strong>Registration Of Title To Land: How To Protect Interests</strong></p>
+    <p id="land-par8">Once you’ve got those estates registered, protecting those interests really comes down to making sure they remain properly recorded and that any third-party interests are also noted on the register. For example, if there are any charges, mortgages, or restrictions, you want to make sure they’re officially recorded so they’re visible to anyone who searches the title. That way, your interest is protected because it is clear and on the public record. And if any disputes come up, you have that registered proof to rely on. So it is all about maintaining the accuracy of the registration and making sure any additional interests are noted to keep everything secure.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land8"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par8')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec9">
+    <h3>Title to land</h3>
+    <p class="subheading"><strong>Registration Of Title To Land: Interests That Override Registration And Interests That Need To Be Protected On The Register</strong></p>
+    <p id="land-par9">Interests that override registration are certain rights that affect the land even if they’re not noted on the register. These can include things like certain leases for a short term, rights of people in actual occupation, or legal easements. They have legal effect even if they’re not specifically recorded in the registry, which is why they’re called overriding interests. On the other hand, there are interests that do need to be protected by being entered on the register-like mortgages, restrictive covenants, and other third-party rights. By entering these on the register, you are ensuring that anyone dealing with the land is aware of them, and that helps protect those interests. So essentially, some interests override automatically, while others need to be formally registered to be fully protected.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land9"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par9')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec10">
+    <h3>Title to land</h3>
+    <p class="subheading"><strong>Core Principles Of Unregistered Land: Role Of Title Deeds</strong></p>
+    <p id="land-par10">So when we’re dealing with unregistered land, the core principles really revolve around the importance of title deeds. In an unregistered system, title deeds are essentially the key documents that prove ownership and the chain of title over time. They include all the historical conveyances, mortgages, and other documents that show how the property has changed hands. So the role of these title deeds is crucial because they’re your primary evidence of ownership. Without a centralized register, you rely on that bundle of deeds to show your title to the land. And that’s why keeping them safe and intact is so important in an unregistered land system.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land10"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par10')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec11">
+    <h3>Title to land</h3>
+    <p class="subheading"><strong>Core Principles Of Unregistered Land: Land Charges</strong></p>
+    <p id="land-par11">When it comes to unregistered land, land charges are essentially certain financial or legal interests that can be registered against the land on a separate register of land charges. This is different from the land registry that you’d have with registered land. It is a way to make certain interests-like restrictive covenants, equitable mortgages, or other charges-officially known so that anyone searching that register can find them. So the key point is that land charges need to be registered on this separate land charges register to ensure they’re protected and enforceable. That way, any purchaser of the land can check for these charges before they buy, and that’s how those interests are made public and protected.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land11"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par11')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec12">
+    <h3>Title to land</h3>
+    <p class="subheading"><strong>Core Principles Of Unregistered Land: Continuing Role Of Doctrine Of Notice</strong></p>
+    <p id="land-par12">So in the context of unregistered land, the doctrine of notice still plays a really crucial role. Essentially, this doctrine is about whether a purchaser of land has notice of any existing interests or rights over that land. If a buyer purchases land without notice of, let’s say, an equitable interest, they may take the land free of that interest. But if they did have notice-whether actual, constructive, or implied-then they might be bound by that interest. So the doctrine of notice is really all about fairness and making sure that purchasers who have notice of existing rights can’t just ignore them. It is a big part of how unregistered land is governed, ensuring that certain interests are honored even without a formal registry system.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land12"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par12')">Read aloud</button>
+    </div>
+  </div>
+
+  <h2 class="category">Co-ownership and Trusts</h2>
+  <div class="topic-section" id="land-sec13">
+    <h3>Co-ownership and Trusts</h3>
+    <p class="subheading"><strong>Differences Between Joint Tenants And Tenants In Common In Law And Equity</strong></p>
+    <p id="land-par13">So when we talk about co-ownership in the context of law and equity, the two main forms are joint tenancy and tenancy in common. With joint tenants, each co-owner has an equal interest in the whole property. One of the key features is the right of survivorship, meaning that if one joint tenant passes away, their interest automatically passes to the other joint tenants. They do not have a separate share that they can leave by will. On the other hand, tenants in common each own a distinct share of the property, which can be equal or unequal. And there’s no right of survivorship here, so each tenant in common can leave their share to someone else in their will. So in summary, the difference really lies in how the ownership is structured and what happens to each person’s share when they pass away. Hopefully that gives you a clear academic distinction between the two.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land13"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par13')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec14">
+    <h3>Co-ownership and Trusts</h3>
+    <p class="subheading"><strong>Rule Of Survivorship</strong></p>
+    <p id="land-par14">Hen we talk about the role of survivorship, we’re really focusing on what happens in a joint tenancy. One of the defining features of a joint tenancy is that right of survivorship, which means that if one joint tenant dies, their interest automatically passes to the remaining joint tenant or tenants. This happens outside of the will or any probate process, so it is a really significant aspect of how joint tenancies work. In contrast, tenants in common do not have this survivorship right, so each person’s share can be passed on according to their will. But the role of survivorship is really that automatic transfer to the surviving co-owner, and it is a core principle of joint tenancies.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land14"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par14')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec15">
+    <h3>Co-ownership and Trusts</h3>
+    <p class="subheading"><strong>Severance Of Joint Tenancies</strong></p>
+    <p id="land-par15">So when we talk about the severance of joint tenancies, we’re really looking at how a joint tenancy can be converted into a tenancy in common. Basically, severance is the process that ends the right of survivorship. It can happen in a few ways-like if one joint tenant acts on their own share, if all joint tenants agree to sever, or even through something like a mutual agreement inferred from conduct. Once severance happens, the joint tenancy is effectively split, and the co-owners then hold the property as tenants in common. That means each owner has a distinct share that they can deal with independently, and the right of survivorship no longer applies. So severance is all about that shift from joint tenancy to tenancy in common.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land15"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par15')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec16">
+    <h3>Co-ownership and Trusts</h3>
+    <p class="subheading"><strong>Solving Disagreements Between Co-Owners By Reference To Sections 14 And 15 Of Trusts Of Land And Appointments Of Trustees Act 1996</strong></p>
+    <p id="land-par16">Essentially, under sections 14 and 15 of the Trusts of Land and Appointment of Trustees Act 1996, if co-owners of a property disagree-say about whether to sell it or how to use it-one of them can apply to the court for a decision. The court then steps in to look at all the circumstances, like why the property was bought in the first place and if there are any children living there who would be affected. In other words, these sections give the court the authority to decide how to resolve the disagreement-whether that means ordering that the property be sold, determining who can stay in it, or setting out how it should be managed. So it is really a legal way to step in and settle disputes between co-owners when they can’t come to an agreement themselves.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land16"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par16')">Read aloud</button>
+    </div>
+  </div>
+
+  <h2 class="category">Proprietary Rights</h2>
+  <div class="topic-section" id="land-sec17">
+    <h3>Proprietary Rights</h3>
+    <p class="subheading"><strong>Essential Characteristics Of Easements</strong></p>
+    <p id="land-par17">So when we’re talking about the essential characteristics of easements, we’re really looking at a few key features that define what an easement is in property law. First, there has to be a dominant tenement and a servient tenement. That means there’s a piece of land that benefits from the easement and a piece of land that’s subject to it. Second, the easement must accommodate the dominant tenement, meaning it has to be connected with the land and not just be a personal right. Third, the owners of the two pieces of land have to be different people, because you can’t have an easement over your own land. And finally, the easement has to be capable of forming the subject matter of a grant, which means it needs to be something clear and definite that can be legally recognized. So those are the core characteristics that define an easement, and they’re what make it a recognizable property right.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land17"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par17')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec18">
+    <h3>Proprietary Rights</h3>
+    <p class="subheading"><strong>Methods For Creation Of Easements</strong></p>
+    <p id="land-par18">So when we talk about methods for creating easements, there are a few different ways they can come into existence. One common method is by an express grant, where the easement is created through a formal deed or written agreement between the parties. Another way is by implication, which can happen when the circumstances imply that the parties intended to create an easement, like if land is subdivided and one part needs access over another. There are also easements by necessity, which arise when it is absolutely necessary for the reasonable use of the land, and easements by prescription, which are acquired over time through long use. So those are the main methods: express grant, implication, necessity, and prescription. Each one has its own rules, but those are the key ways easements are created.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land18"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par18')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec19">
+    <h3>Proprietary Rights</h3>
+    <p class="subheading"><strong>Rules For Passing Of The Benefit And Burden Of Freehold Covenants</strong></p>
+    <p id="land-par19">When we’re talking about freehold covenants, one key aspect is how the benefit and burden of those covenants pass on to future owners of the land. Generally, the benefit of a covenant can pass to a new owner if it touches and concerns the land, and if it was intended to run with the land. That means it has to benefit the land itself, not just the original owner. On the other hand, the burden of a covenant, which is the obligation, doesn’t automatically pass to a new owner at common law. Instead, it typically only binds the original party. However, in equity, the burden can sometimes run with the land if the covenant is restrictive in nature and certain conditions are met. So in short, the rules for passing on the benefit and burden of freehold covenants are a mix of common law and equity, and it depends on the nature of the covenant and how it was intended to run with the land.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land19"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par19')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec20">
+    <h3>Proprietary Rights</h3>
+    <p class="subheading"><strong>Mortgages, Including Enforceability Of Terms, Priority Of Mortgages, Lender&#x27;S Powers And Duties, And Protection Of Mortgagors And Other Third Parties With An Interest In Land.</strong></p>
+    <p id="land-par20">When we are talking about mortgages in the context of land law, there is a whole bundle of key points. First, in terms of enforceability of terms, a mortgage is a legal agreement, and the terms set out in that mortgage-like repayment schedules or interest rates-are enforceable as long as they comply with the law. Then there is the priority of mortgages, which is about which lender gets paid first if the property is sold. Generally, the rule is that the first mortgage registered has priority, but there can be exceptions based on the circumstances. Lenders also have certain powers and duties, like the power to sell the property if the borrower defaults, but they have to act fairly and in good faith. And finally, there are protections for mortgagors-the borrowers-like certain rights of redemption, as well as protections for third parties who might have an interest in the property. So overall, mortgages cover enforceable terms, who gets priority, the powers and duties of lenders, and the protections for borrowers and others involved.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land20"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par20')">Read aloud</button>
+    </div>
+  </div>
+
+  <h2 class="category">Leases</h2>
+  <div class="topic-section" id="land-sec21">
+    <h3>Leases</h3>
+    <p class="subheading"><strong>Relationship Between Landlord And Tenant In A Lease</strong></p>
+    <p id="land-par21">In a lease, the relationship between landlord and tenant is fundamentally one of contract and property law combined. The landlord, also known as the lessor, grants the tenant, or lessee, the right to exclusive possession of the property for a defined term, in return for rent. This relationship creates a bundle of rights and responsibilities for both parties. The landlord has the right to receive rent and to have the property returned in good condition, while the tenant has the right to quiet enjoyment of the property and protection from unlawful eviction. Essentially, the lease sets out the terms under which the tenant can use the property and the obligations each party owes to the other. So in short, the landlord-tenant relationship in a lease is a structured legal arrangement that balances the landlord’s interest in their property with the tenant’s right to occupy and use it for the term of the lease.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land21"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par21')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec22">
+    <h3>Leases</h3>
+    <p class="subheading"><strong>Essential Characteristics Of A Lease Including The Difference Between A Lease And A Licence</strong></p>
+    <p id="land-par22">A lease is essentially a contractual arrangement that grants a tenant exclusive possession of a property for a defined period of time, in return for rent. There are a few key elements that define a lease. First, there must be a certain term, meaning the lease has to have a clear start and end date or at least a way to determine its duration. Second, the tenant must have exclusive possession, which means they have the right to control the property and exclude others, including the landlord, subject to the terms of the lease. Now, in terms of the difference between a lease and a licence, a lease gives the tenant a legal interest in the land, along with those rights of exclusive possession for the term of the lease. A licence, on the other hand, is more of a personal permission to use the property without granting a legal estate. It doesn’t confer exclusive possession and can often be more easily revoked. So in summary, a lease is defined by a certain term and exclusive possession, giving the tenant a legal interest, whereas a licence is more limited and doesn’t create that same legal interest in the land.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land22"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par22')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec23">
+    <h3>Leases</h3>
+    <p class="subheading"><strong>Privity Of Contract And Privity Of Estate</strong></p>
+    <p id="land-par23">Privity of contract refers to the direct contractual relationship between the original landlord and tenant. This means that the parties who originally signed the lease are bound by its terms. Even if the property is sold or the lease is assigned, that original contract remains enforceable between the original parties. Privity of estate, on the other hand, is the relationship that exists between the current landlord and the current tenant who is actually in possession of the property. If the lease is assigned to a new tenant, then privity of estate shifts to that new tenant. This means the new tenant and the landlord are bound by the lease obligations that run with the land, even though they weren’t the original parties to the contract. In summary, privity of contract is about the original contractual ties, while privity of estate is about the current landlord-tenant relationship tied to the occupation of the property.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land23"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par23')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec24">
+    <h3>Leases</h3>
+    <p class="subheading"><strong>Rules For Passing Of The Benefit And Burden Of Leasehold Covenants And Enforceability</strong></p>
+    <p id="land-par24">First, the benefit of leasehold covenants-that is, the rights a tenant or landlord gains-can run with the lease. This means that if the lease is assigned to a new tenant, the new tenant can benefit from the covenants that touch and concern the land. Similarly, the landlord’s rights can pass to a new landlord if the reversion is transferred. The burden of leasehold covenants-that is, the obligations-also runs with the lease, provided those covenants touch and concern the land. This means that a new tenant who takes over the lease is bound by the same obligations as the original tenant. The same applies to the landlord’s obligations if the landlord’s interest is transferred. In short, for a covenant to be enforceable by or against someone who wasn’t an original party to the lease, it generally needs to be related to the land itself rather than a purely personal obligation. If it does, then both the benefit and the burden can pass along with the lease, making those covenants enforceable by and against successors.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land24"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par24')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec25">
+    <h3>Leases</h3>
+    <p class="subheading"><strong>Purpose And Effect Of An Alienation Covenant</strong></p>
+    <p id="land-par25">An alienation covenant in a lease is a clause that restricts the tenant’s ability to transfer their leasehold interest to someone else. In other words, it controls whether and how the tenant can assign the lease, sublet the property, or otherwise part with possession. The purpose of such a covenant is to give the landlord a degree of control over who occupies the property. For example, a landlord may want to ensure that any new tenant is financially stable or suitable for the property’s intended use. The effect of an alienation covenant is that the tenant must seek the landlord’s consent before transferring their interest, although the landlord’s consent usually can’t be unreasonably withheld. In short, an alienation covenant is there to protect the landlord’s interests by regulating the transfer of the lease, ensuring that the property remains in the hands of acceptable occupants throughout the term.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land25"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par25')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec26">
+    <h3>Leases</h3>
+    <p class="subheading"><strong>Remedies For Breach Of Leasehold Covenants (Including Forfeiture)</strong></p>
+    <p id="land-par26">When it comes to remedies for breach of leasehold covenants, there are several options available to the landlord. One of the most significant remedies is forfeiture, which is the landlord’s right to terminate the lease and take back possession of the property if the tenant has breached a fundamental covenant, such as failing to pay rent. Forfeiture is a serious remedy and usually requires the landlord to follow a specific legal process, including serving notice on the tenant and giving them an opportunity to remedy the breach if possible. Apart from forfeiture, other remedies for breach of covenant can include suing for damages to recover financial losses caused by the breach or seeking an injunction to compel the tenant to comply with the covenant in the future. In summary, if a tenant breaches a leasehold covenant, the landlord can consider remedies like forfeiture, damages, or injunctions to address the breach and protect their interests.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land26"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par26')">Read aloud</button>
+    </div>
+  </div>
+
+  <div class="topic-section" id="land-sec27">
+    <h3>Leases</h3>
+    <p class="subheading"><strong>Different Ways A Lease Can Be Terminated</strong></p>
+    <p id="land-par27">First, a lease can naturally expire at the end of its fixed term. When the agreed period comes to an end, the lease simply terminates, and the tenant must vacate unless a new agreement is made. Second, a lease can be terminated by mutual agreement. This is often called a surrender, where both the landlord and the tenant agree to end the lease early on agreed terms. Third, as mentioned before, a lease can be terminated by forfeiture if the tenant breaches a fundamental covenant, and the landlord follows the proper legal process to reclaim the property. Fourth, a lease can be terminated by a break clause if one is included in the lease. A break clause allows either the landlord, the tenant, or both to end the lease early by giving the required notice. Finally, a lease can be terminated by merger if the tenant acquires the landlord’s interest, effectively merging the leasehold and freehold estates. So those are some of the main ways a lease can come to an end, whether by the passage of time, mutual agreement, landlord action, or specific clauses in the lease itself.</p>
+    <div class="controls">
+      <input type="checkbox" data-id="land27"> Mark as read
+      <button class="speak-btn" onclick="speakParagraph('land-par27')">Read aloud</button>
+    </div>
+  </div>
+
+</div>
+<script src="../script.js"></script>
 </body>
 </html>
